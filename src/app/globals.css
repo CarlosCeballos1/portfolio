@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jbmono);
+
+  --color-bg: #0a0e14;
+  --color-panel: #10151d;
+  --color-panel-2: #161c26;
+  --color-ink: #eef2f6;
+  --color-ink-secondary: #a6b0bd;
+  --color-ink-muted: #6b7686;
+
+  --color-accent: #5eead4;
+  --color-accent-strong: #2dd4bf;
+
+  --color-status-good: #0ca30c;
+  --color-status-good-ink: #7be382;
+  --color-status-warning: #fab219;
+  --color-status-neutral: #8b95a3;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  background-image:
+    linear-gradient(rgba(94, 234, 212, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94, 234, 212, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center top;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar, terminal-flavored */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-panel-2) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-panel-2);
+  border-radius: 999px;
+  border: 2px solid var(--color-bg);
+}
+
+@keyframes blink-caret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.blink-caret {
+  animation: blink-caret 1s steps(1) infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.text-glow {
+  text-shadow: 0 0 24px rgba(94, 234, 212, 0.35);
+}
+
+/* selection */
+::selection {
+  background: rgba(94, 234, 212, 0.25);
+  color: var(--color-ink);
+}
