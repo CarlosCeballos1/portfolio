@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import type { ExperienceEntry } from "@/lib/types";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 export function GitLog({ entries }: { entries: ExperienceEntry[] }) {
   return (
@@ -16,6 +17,7 @@ export function GitLog({ entries }: { entries: ExperienceEntry[] }) {
 
 function LogEntry({ entry, defaultOpen, isLast }: { entry: ExperienceEntry; defaultOpen: boolean; isLast: boolean }) {
   const [open, setOpen] = useState(defaultOpen);
+  const { t } = useLocale();
 
   return (
     <motion.div
@@ -70,7 +72,7 @@ function LogEntry({ entry, defaultOpen, isLast }: { entry: ExperienceEntry; defa
             onClick={() => setOpen(true)}
             className="mt-2 font-mono text-[12px] text-ink-muted underline decoration-dotted underline-offset-4 hover:text-accent"
           >
-            git show --stat ({entry.bullets.length} cambios)
+            {t.experience.showStat(entry.bullets.length)}
           </button>
         )}
       </div>

@@ -15,35 +15,55 @@ npm run lint    # eslint
 ```
 
 
+## Idiomas
+
+El sitio es bilingüe: **inglés es el idioma principal** (en `/`) y el español vive bajo `/es`
+(`/es/projects/pargo`, por ejemplo). El selector `EN | ES` de la barra superior cambia de idioma
+en la misma página.
+
+- `src/proxy.ts` sirve el inglés sin prefijo (reescribe `/projects` → `/en/projects`) y
+  redirige `/en/...` a la URL sin prefijo.
+- Las URLs viejas en español (`/proyectos`, `/experiencia`, `/contacto`) redirigen a su
+  equivalente bajo `/es` (ver `next.config.ts`).
+- Textos de la interfaz: `src/i18n/dictionary.ts`. Contenido: `src/content/`, donde cada texto
+  se escribe como string (igual en ambos idiomas) o como `{ en: "...", es: "..." }`.
+
 ## Estructura
 
 ```
 src/
-├── app/                    # rutas (App Router)
-│   ├── layout.tsx          # fuentes + <Shell> (topbar/sidebar/paleta de comandos)
-│   ├── page.tsx             # Home (hero tipo terminal)
-│   ├── proyectos/           # índice + [slug] con la plantilla de case study
-│   ├── experiencia/         # timeline estilo `git log --graph`
-│   ├── skills/               # stack como `skills.json`
-│   └── contacto/
+├── proxy.ts                # idioma por URL (inglés en la raíz, español en /es)
+├── app/
+│   ├── globals.css
+│   └── [lang]/              # todas las rutas, una vez por idioma
+│       ├── layout.tsx       # <html lang>, fuentes, <LocaleProvider> + <Shell>
+│       ├── page.tsx         # Home (hero tipo terminal)
+│       ├── projects/        # índice + [slug] con la plantilla de case study
+│       ├── experience/      # timeline estilo `git log --graph`
+│       ├── skills/          # stack como `skills.json`
+│       └── contact/
 ├── components/
-│   ├── ide-shell/           # TopBar, Sidebar, CommandPalette, StatusBar, Shell
-│   ├── terminal/             # TypingText, HeroTerminal, GitLog, DependencyList
+│   ├── ide-shell/           # TopBar, LanguageSwitch, Sidebar, CommandPalette, StatusBar, Shell
+│   ├── terminal/            # TypingText, HeroTerminal, GitLog, DependencyList
 │   └── case-study/          # StatusBadge, StackChips, StatRow, ArchitectureDiagram, Gallery, ProjectCard
-├── content/                  # DATA de cada sección (texto/métricas), separada del layout
+├── content/                 # DATA de cada sección (texto/métricas) en ambos idiomas
 │   ├── projects.ts
 │   ├── experience.ts
 │   └── skills.ts
+├── i18n/
+│   ├── config.ts            # idiomas, URLs por idioma y `localize()`
+│   ├── dictionary.ts        # textos de la interfaz en/es
+│   └── LocaleProvider.tsx   # idioma, textos y proyectos para los componentes cliente
 └── lib/
-    ├── site.ts               # nombre, contacto, nav, link del CV
+    ├── site.ts              # nombre, contacto, rutas del nav, link del CV
     └── types.ts
 public/
 ├── cv/CV_Carlos_Ceballos_Amor.pdf
-└── screenshots/              # capturas reales (caminante, pargo, catoca, ventas) en WebP
+└── screenshots/             # capturas reales (pargo, catoca, ventas) en WebP
 ```
 
 Para editar textos, métricas o el stack de un proyecto: **solo tocar los archivos en
-`src/content/`**, no hace falta tocar los componentes visuales.
+`src/content/`** (y `src/i18n/dictionary.ts` para la interfaz), sin tocar los componentes.
 
 ## Decisiones de diseño
 

@@ -2,7 +2,6 @@ export const SITE = {
   name: "Carlos Ceballos",
   fullName: "Carlos Daniel Ceballos Amor",
   role: "Full Stack Developer",
-  roleLong: "Desarrollador Web Full Stack — Frontend · Backend · Mobile",
   location: "Cartagena, Colombia",
   email: "carlosdceballos30@gmail.com",
   phoneDisplay: "+57 320 319 8734",
@@ -13,16 +12,13 @@ export const SITE = {
   yearsExperience: 3,
 } as const;
 
-export interface NavTab {
-  href: string;
-  fileName: string;
-  label: string;
-}
+export type NavKey = "home" | "projects" | "experience" | "skills" | "contact";
 
-export const NAV_TABS: NavTab[] = [
-  { href: "/", fileName: "home.tsx", label: "Inicio" },
-  { href: "/proyectos", fileName: "proyectos/", label: "Proyectos" },
-  { href: "/experiencia", fileName: "experiencia.log", label: "Experiencia" },
-  { href: "/skills", fileName: "skills.json", label: "Skills" },
-  { href: "/contacto", fileName: "contacto.sh", label: "Contacto" },
+/** Route paths shared by both languages; labels and file names live in the dictionary. */
+export const NAV_ITEMS: { key: NavKey; path: string }[] = [
+  { key: "home", path: "/" },
+  { key: "projects", path: "/projects" },
+  { key: "experience", path: "/experience" },
+  { key: "skills", path: "/skills" },
+  { key: "contact", path: "/contact" },
 ];
