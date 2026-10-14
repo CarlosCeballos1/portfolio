@@ -2,6 +2,19 @@ import type { ExperienceEntry } from "@/lib/types";
 
 export const EXPERIENCE: ExperienceEntry[] = [
   {
+    hash: "e4f7a20",
+    company: "Independiente — CATOCA y Pargo",
+    role: "Desarrollador Full Stack — Freelance y producto propio",
+    period: "Nov 2025 — actualidad",
+    branch: "feature/freelance",
+    tags: ["NestJS", "React", "PostgreSQL", "Wompi", "Vercel", "IA"],
+    bullets: [
+      "Desarrollé y mantengo la tienda en línea de CATOCA (catoca.cafe), en producción: checkout con Wompi firmado en funciones serverless de Vercel, correos con Gmail API e imágenes optimizadas de 33,8 MB a 1,4 MB.",
+      "Construyo el sistema interno de ventas de CATOCA: inventario por lotes con kardex FIFO, comisiones, prefacturas con campos DIAN y exporte para Siigo Nube, con 100 % de cobertura de pruebas.",
+      "Diseño y desarrollo Pargo, un SaaS POS multi-tenant para restaurantes: PostgreSQL con RLS, caja que vende sin internet con eventos firmados, inventario por receta, facturación electrónica e IA multiproveedor, con 751 tests automatizados.",
+    ],
+  },
+  {
     hash: "a1b2c9f",
     company: "GEH Suites",
     role: "Desarrollador Web Full Stack",

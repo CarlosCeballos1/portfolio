@@ -4,7 +4,8 @@ import { PROJECTS } from "@/content/projects";
 
 export const metadata: Metadata = {
   title: "Proyectos — Carlos Ceballos",
-  description: "Case studies técnicos de Carlos Ceballos: Booking Connect, gestión de caja menor, CATOCA y Caminante.",
+  description:
+    "Case studies técnicos de Carlos Ceballos: Booking Connect, Pargo, CATOCA, el sistema de ventas de CATOCA, gestión de caja menor y Caminante.",
 };
 
 export default function ProyectosPage() {
@@ -14,8 +15,9 @@ export default function ProyectosPage() {
       <h1 className="text-3xl font-semibold text-ink sm:text-4xl">Proyectos</h1>
       <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-ink-secondary">
         Trabajo profesional en repos privados de empleadores (documentado a fondo, sin exponer código
-        propietario), un proyecto en curso para un cliente real, y un proyecto propio. Cada archivo
-        lleva la extensión del stack que usé para construirlo.
+        propietario), dos proyectos para un cliente real (uno ya en producción) y proyectos propios,
+        entre ellos un SaaS POS en desarrollo. Cada archivo lleva la extensión del stack que usé para
+        construirlo.
       </p>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2">

@@ -39,7 +39,7 @@ src/
     └── types.ts
 public/
 ├── cv/CV_Carlos_Ceballos_Amor.pdf
-└── screenshots/caminante/    # capturas reales de la app Caminante
+└── screenshots/              # capturas reales (caminante, pargo, catoca, ventas) en WebP
 ```
 
 Para editar textos, métricas o el stack de un proyecto: **solo tocar los archivos en
