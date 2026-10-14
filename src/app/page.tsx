@@ -26,8 +26,8 @@ export default function HomePage() {
           <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-ink-secondary">
             Soy {SITE.fullName.split(" ")[0]}, desarrollador full stack en Cartagena, Colombia.
             Diseño APIs, bases de datos y frontends para productos B2B reales — desde una plataforma
-            de reservas hoteleras con más de 1.000 agencias hasta agentes de IA que automatizan
-            procesos de negocio.
+            de reservas hoteleras con más de 1.000 agencias hasta un POS multi-tenant que sigue
+            vendiendo sin internet y agentes de IA que automatizan procesos de negocio.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link

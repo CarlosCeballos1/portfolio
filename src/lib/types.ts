@@ -35,6 +35,8 @@ export interface Decision {
 export interface GalleryImage {
   src: string;
   alt: string;
+  /** Captura de escritorio (16:10) en vez de pantalla de móvil (9:16). */
+  landscape?: boolean;
 }
 
 export interface Project {
