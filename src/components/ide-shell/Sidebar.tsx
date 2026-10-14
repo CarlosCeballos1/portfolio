@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { PROJECTS } from "@/content/projects";
-import { NAV_TABS, SITE } from "@/lib/site";
+import { NAV_ITEMS, SITE } from "@/lib/site";
+import { localizedHref, stripLocale } from "@/i18n/config";
+import { useLocale } from "@/i18n/LocaleProvider";
 import { StatusDot } from "@/components/case-study/StatusBadge";
 
 interface SidebarProps {
@@ -13,20 +14,21 @@ interface SidebarProps {
 }
 
 export function Sidebar({ open, onClose }: SidebarProps) {
-  const pathname = usePathname();
+  const pathname = stripLocale(usePathname());
+  const { locale, t, projects } = useLocale();
 
   const content = (
     <div className="flex h-full w-64 shrink-0 flex-col bg-panel font-mono text-[13px]">
       <div className="flex-1 overflow-y-auto px-3 py-4">
-        <p className="mb-2 px-2 text-[11px] tracking-wider text-ink-muted">EXPLORADOR</p>
+        <p className="mb-2 px-2 text-[11px] tracking-wider text-ink-muted">{t.shell.explorer}</p>
 
         <div className="mb-1">
-          {NAV_TABS.map((tab) => {
-            const active = tab.href === "/" ? pathname === "/" : pathname.startsWith(tab.href) && tab.href !== "/proyectos";
+          {NAV_ITEMS.map((item) => {
+            const active = item.path === "/" ? pathname === "/" : pathname.startsWith(item.path) && item.path !== "/projects";
             return (
               <Link
-                key={tab.href}
-                href={tab.href}
+                key={item.path}
+                href={localizedHref(locale, item.path)}
                 onClick={onClose}
                 className={clsx(
                   "flex items-center gap-2 rounded-sm px-2 py-1.5 transition-colors",
@@ -34,23 +36,23 @@ export function Sidebar({ open, onClose }: SidebarProps) {
                 )}
               >
                 <FileIcon />
-                {tab.fileName}
+                {t.nav[item.key].fileName}
               </Link>
             );
           })}
         </div>
 
         <p className="mb-1 mt-4 flex items-center gap-1.5 px-2 text-ink-secondary">
-          <ChevronDown /> proyectos/
+          <ChevronDown /> {t.nav.projects.fileName}
         </p>
         <div className="ml-3 flex flex-col gap-0.5 border-l border-white/8 pl-2">
-          {PROJECTS.map((project) => {
-            const href = `/proyectos/${project.slug}`;
-            const active = pathname === href;
+          {projects.map((project) => {
+            const path = `/projects/${project.slug}`;
+            const active = pathname === path;
             return (
               <Link
                 key={project.slug}
-                href={href}
+                href={localizedHref(locale, path)}
                 onClick={onClose}
                 className={clsx(
                   "flex items-center gap-2 rounded-sm px-2 py-1.5 transition-colors",
@@ -59,7 +61,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
               >
                 <FileIcon />
                 <span className="truncate">{project.fileName}</span>
-                <StatusDot status={project.status} className="ml-auto shrink-0" />
+                <StatusDot status={project.status} title={t.shell.status[project.status]} className="ml-auto shrink-0" />
               </Link>
             );
           })}
@@ -67,7 +69,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       </div>
 
       <div className="shrink-0 border-t border-white/8 px-3 py-3">
-        <p className="mb-2 px-2 text-[11px] tracking-wider text-ink-muted">CONECTAR</p>
+        <p className="mb-2 px-2 text-[11px] tracking-wider text-ink-muted">{t.shell.connect}</p>
         <div className="flex flex-col gap-0.5">
           <SidebarLink href={SITE.github} label="GitHub" />
           <SidebarLink href={SITE.linkedin} label="LinkedIn" />
@@ -78,7 +80,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
           download
           className="mt-3 flex items-center justify-center gap-2 rounded-sm border border-accent/30 bg-accent/10 px-3 py-2 text-[12px] text-accent transition-colors hover:bg-accent/20"
         >
-          ↓ Descargar CV
+          {t.shell.downloadCv}
         </a>
       </div>
     </div>

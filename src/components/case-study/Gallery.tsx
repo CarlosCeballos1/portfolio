@@ -2,12 +2,12 @@ import Image from "next/image";
 import clsx from "clsx";
 import type { GalleryImage } from "@/lib/types";
 
-export function Gallery({ images }: { images: GalleryImage[] }) {
+export function Gallery({ images, emptyLabel }: { images: GalleryImage[]; emptyLabel: string }) {
   if (images.length === 0) {
     return (
       <div className="flex items-center justify-center rounded-md border border-dashed border-white/12 bg-panel/40 px-6 py-12 font-mono text-[13px] text-ink-muted">
         <span className="blink-caret mr-1 text-accent">▍</span>
-        capturas en camino — se agregan cuando el sitio esté desplegado
+        {emptyLabel}
       </div>
     );
   }

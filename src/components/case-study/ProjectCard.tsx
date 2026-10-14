@@ -1,11 +1,12 @@
 import Link from "next/link";
 import type { Project } from "@/lib/types";
+import { localizedHref, type Locale } from "@/i18n/config";
 import { StatusBadge } from "./StatusBadge";
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project, locale }: { project: Project; locale: Locale }) {
   return (
     <Link
-      href={`/proyectos/${project.slug}`}
+      href={localizedHref(locale, `/projects/${project.slug}`)}
       className="group flex flex-col gap-3 rounded-md border border-white/8 bg-panel p-5 transition-colors hover:border-accent/40 hover:bg-panel-2"
     >
       <div className="flex items-center justify-between gap-2">

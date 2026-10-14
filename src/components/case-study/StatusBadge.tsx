@@ -42,10 +42,8 @@ export function StatusBadge({ status, label }: { status: ProjectStatus; label: s
   );
 }
 
-export function StatusDot({ status, className }: { status: ProjectStatus; className?: string }) {
+export function StatusDot({ status, title, className }: { status: ProjectStatus; title: string; className?: string }) {
   const styles = STATUS_STYLES[status];
-  const title =
-    status === "production" ? "En producción" : status === "in-development" ? "En desarrollo" : "Archivado";
   return (
     <span
       title={title}

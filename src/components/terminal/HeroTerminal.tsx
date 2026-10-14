@@ -4,14 +4,15 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { TypingText } from "./TypingText";
 import { SITE } from "@/lib/site";
-
-const LINES = [
-  { cmd: "whoami", output: SITE.fullName },
-  { cmd: "cat role.txt", output: SITE.roleLong },
-  { cmd: "cat status.txt", output: `${SITE.yearsExperience}+ años de experiencia · Cartagena, Colombia (remoto)` },
-];
+import { useLocale } from "@/i18n/LocaleProvider";
 
 export function HeroTerminal() {
+  const { t } = useLocale();
+  const lines = [
+    { cmd: "whoami", output: SITE.fullName },
+    { cmd: "cat role.txt", output: t.meta.roleLong },
+    { cmd: "cat status.txt", output: t.terminal.status(SITE.yearsExperience) },
+  ];
   const [revealed, setRevealed] = useState(0);
   const [outputShown, setOutputShown] = useState(false);
 
@@ -24,7 +25,7 @@ export function HeroTerminal() {
     return () => clearTimeout(timeout);
   }, [outputShown]);
 
-  const done = revealed >= LINES.length;
+  const done = revealed >= lines.length;
 
   return (
     <div className="overflow-hidden rounded-lg border border-white/10 bg-panel shadow-xl shadow-black/40">
@@ -35,7 +36,7 @@ export function HeroTerminal() {
         <span className="ml-3 font-mono text-[12px] text-ink-muted">carlos@portfolio: ~</span>
       </div>
       <div className="min-h-[168px] px-5 py-5 font-mono text-[13.5px] leading-relaxed sm:text-[14.5px]">
-        {LINES.map((line, i) => {
+        {lines.map((line, i) => {
           if (i > revealed) return null;
           const isCurrent = i === revealed && !done;
           return (

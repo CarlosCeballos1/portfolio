@@ -2,8 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NAV_TABS } from "@/lib/site";
 import clsx from "clsx";
+import { NAV_ITEMS } from "@/lib/site";
+import { localizedHref, stripLocale } from "@/i18n/config";
+import { useLocale } from "@/i18n/LocaleProvider";
+import { LanguageSwitch } from "./LanguageSwitch";
 
 interface TopBarProps {
   onToggleSidebar: () => void;
@@ -11,14 +14,15 @@ interface TopBarProps {
 }
 
 export function TopBar({ onToggleSidebar, onOpenPalette }: TopBarProps) {
-  const pathname = usePathname();
+  const pathname = stripLocale(usePathname());
+  const { locale, t } = useLocale();
 
   return (
     <header className="flex h-11 shrink-0 items-stretch border-b border-white/8 bg-panel">
       <button
         type="button"
         onClick={onToggleSidebar}
-        aria-label="Mostrar/ocultar navegación"
+        aria-label={t.shell.toggleNav}
         className="flex w-11 shrink-0 items-center justify-center border-r border-white/8 text-ink-secondary transition-colors hover:bg-panel-2 hover:text-accent lg:hidden"
       >
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -33,12 +37,12 @@ export function TopBar({ onToggleSidebar, onOpenPalette }: TopBarProps) {
       </div>
 
       <nav className="flex min-w-0 flex-1 items-stretch overflow-x-auto">
-        {NAV_TABS.map((tab) => {
-          const active = tab.href === "/" ? pathname === "/" : pathname.startsWith(tab.href);
+        {NAV_ITEMS.map((item) => {
+          const active = item.path === "/" ? pathname === "/" : pathname.startsWith(item.path);
           return (
             <Link
-              key={tab.href}
-              href={tab.href}
+              key={item.path}
+              href={localizedHref(locale, item.path)}
               className={clsx(
                 "group flex shrink-0 items-center gap-2 border-r border-white/8 px-4 font-mono text-[13px] transition-colors",
                 active
@@ -52,11 +56,13 @@ export function TopBar({ onToggleSidebar, onOpenPalette }: TopBarProps) {
                   active ? "bg-accent" : "bg-transparent group-hover:bg-ink-muted"
                 )}
               />
-              {tab.fileName}
+              {t.nav[item.key].fileName}
             </Link>
           );
         })}
       </nav>
+
+      <LanguageSwitch className="shrink-0 border-l border-white/8 px-3" />
 
       <button
         type="button"
