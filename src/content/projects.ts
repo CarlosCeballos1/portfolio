@@ -275,7 +275,7 @@ const PROJECTS: LocalizedSource<Project>[] = [
     status: "production",
     statusLabel: { en: "In production", es: "En producción" },
     employer: { en: "CATOCA (client)", es: "CATOCA (cliente)" },
-    period: { en: "Nov 2025 — present", es: "Nov 2025 — actualidad" },
+    period: { en: "Jul 2026 — present", es: "Jul 2026 — actualidad" },
     featured: true,
     liveUrl: "https://www.catoca.cafe",
     summary: {

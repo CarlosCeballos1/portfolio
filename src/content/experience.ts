@@ -6,7 +6,7 @@ const EXPERIENCE: LocalizedSource<ExperienceEntry>[] = [
     hash: "e4f7a20",
     company: { en: "Independent — CATOCA and Pargo", es: "Independiente — CATOCA y Pargo" },
     role: { en: "Full Stack Developer — Freelance and own product", es: "Desarrollador Full Stack — Freelance y producto propio" },
-    period: { en: "Nov 2025 — present", es: "Nov 2025 — actualidad" },
+    period: { en: "Jul 2026 — present", es: "Jul 2026 — actualidad" },
     branch: "feature/freelance",
     tags: ["NestJS", "React", "PostgreSQL", "Wompi", "Vercel", { en: "AI", es: "IA" }],
     bullets: [
