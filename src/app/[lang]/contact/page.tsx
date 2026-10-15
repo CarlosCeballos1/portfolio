@@ -20,7 +20,8 @@ const CHANNELS = [
 ];
 
 export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
-  const t = getDictionary(toLocale((await params).lang));
+  const locale = toLocale((await params).lang);
+  const t = getDictionary(locale);
 
   return (
     <div className="mx-auto max-w-2xl px-5 py-14 sm:px-8 sm:py-20">
@@ -57,7 +58,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
       </div>
 
       <a
-        href={SITE.cvHref}
+        href={SITE.cvHref[locale]}
         download
         className="mt-6 inline-flex items-center gap-2 rounded-md border border-accent/30 bg-accent/10 px-5 py-2.5 font-mono text-[13.5px] text-accent transition-colors hover:bg-accent/20"
       >

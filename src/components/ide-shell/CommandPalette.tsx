@@ -88,7 +88,7 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
             {t.palette.sendEmail} <span className="text-ink-muted">— {SITE.email}</span>
           </Command.Item>
           <Command.Item
-            onSelect={() => goExternal(SITE.cvHref)}
+            onSelect={() => goExternal(SITE.cvHref[locale])}
             className="cursor-pointer rounded-sm px-3 py-2 text-ink-secondary data-[selected=true]:bg-panel-2 data-[selected=true]:text-accent"
           >
             {t.palette.downloadCv}

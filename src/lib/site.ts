@@ -8,7 +8,7 @@ export const SITE = {
   whatsapp: "https://wa.me/573203198734",
   github: "https://github.com/CarlosCeballos1",
   linkedin: "https://www.linkedin.com/in/carlosceballosamor",
-  cvHref: "/cv/CV_Carlos_Ceballos_Amor.pdf",
+  cvHref: { en: "/cv/CV_Carlos_Ceballos_Amor_EN.pdf", es: "/cv/CV_Carlos_Ceballos_Amor.pdf" },
   yearsExperience: 3,
 } as const;
 

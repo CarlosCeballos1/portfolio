@@ -76,7 +76,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
           <SidebarLink href={`mailto:${SITE.email}`} label="Email" />
         </div>
         <a
-          href={SITE.cvHref}
+          href={SITE.cvHref[locale]}
           download
           className="mt-3 flex items-center justify-center gap-2 rounded-sm border border-accent/30 bg-accent/10 px-3 py-2 text-[12px] text-accent transition-colors hover:bg-accent/20"
         >
