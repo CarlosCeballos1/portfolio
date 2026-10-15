@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Analytics } from "@vercel/analytics/next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Shell } from "@/components/ide-shell/Shell";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
@@ -64,6 +65,7 @@ export default async function RootLayout({
         <LocaleProvider locale={lang} projects={getProjects(lang)}>
           <Shell>{children}</Shell>
         </LocaleProvider>
+        <Analytics />
       </body>
     </html>
   );
