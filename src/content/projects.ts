@@ -15,7 +15,7 @@ const PROJECTS: LocalizedSource<Project>[] = [
     status: "production",
     statusLabel: { en: "In production", es: "En producción" },
     employer: "GEH Suites",
-    period: { en: "Feb 2025 — present", es: "Feb 2025 — actualidad" },
+    period: { en: "Feb 2025 — Jun 2026", es: "Feb 2025 — Jun 2026" },
     featured: true,
     summary: {
       en: "B2B platform for checking availability, quoting and booking hotels, used by more than 1,000 travel agencies and 1,400 active users. I scaled, ran and maintained the system, and built the complete flight and hotel booking API.",
@@ -127,7 +127,7 @@ const PROJECTS: LocalizedSource<Project>[] = [
     status: "in-development",
     statusLabel: { en: "MVP in demos", es: "MVP en demos" },
     employer: { en: "Own product", es: "Proyecto propio" },
-    period: { en: "Sep 2026 — ongoing", es: "Sep 2026 — en curso" },
+    period: { en: "Jul 2026 — ongoing", es: "Jul 2026 — en curso" },
     featured: true,
     summary: {
       en: "SaaS platform for restaurants and hotels: a tablet POS that keeps selling without internet, floor plan by zones, real-time kitchen tickets, checkout with tips and split bills, cash closing with blind count and Z report, DIAN electronic invoicing, recipe-based inventory, QR digital menu and AI-powered reputation.",
@@ -495,7 +495,7 @@ const PROJECTS: LocalizedSource<Project>[] = [
     status: "production",
     statusLabel: { en: "In production", es: "En producción" },
     employer: "GEH Suites",
-    period: { en: "Feb 2025 — present", es: "Feb 2025 — actualidad" },
+    period: { en: "Feb 2025 — Jun 2026", es: "Feb 2025 — Jun 2026" },
     summary: {
       en: "Expense management system for 13 hotel properties: expense tracking, petty cash, purchase requests and procurement, real-time statistics and automatic PDF and Excel reports.",
       es: "Sistema de gestión de gastos financieros para 13 propiedades hoteleras: registro de gastos, manejo de caja menor, requisiciones y compras, estadísticas en tiempo real y generación automática de reportes en PDF y Excel.",
