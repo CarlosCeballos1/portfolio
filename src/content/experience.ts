@@ -19,8 +19,8 @@ const EXPERIENCE: LocalizedSource<ExperienceEntry>[] = [
         es: "Construyo el sistema interno de ventas de CATOCA: inventario por lotes con kardex FIFO, comisiones, prefacturas con campos DIAN y exporte para Siigo Nube, con 100 % de cobertura de pruebas.",
       },
       {
-        en: "Designing and developing Pargo, a multi-tenant SaaS POS for restaurants: PostgreSQL with RLS, a POS that sells without internet using signed events, recipe-based inventory, electronic invoicing and multi-provider AI, with 751 automated tests.",
-        es: "Diseño y desarrollo Pargo, un SaaS POS multi-tenant para restaurantes: PostgreSQL con RLS, caja que vende sin internet con eventos firmados, inventario por receta, facturación electrónica e IA multiproveedor, con 751 tests automatizados.",
+        en: "Designing and developing Pargo, my personal project built with AI-assisted development, a multi-tenant SaaS POS for restaurants: PostgreSQL with RLS, a POS that sells without internet using signed events, recipe-based inventory, electronic invoicing and multi-provider AI, with 751 automated tests.",
+        es: "Diseño y desarrollo Pargo, mi proyecto personal construido con desarrollo asistido por IA, un SaaS POS multi-tenant para restaurantes: PostgreSQL con RLS, caja que vende sin internet con eventos firmados, inventario por receta, facturación electrónica e IA multiproveedor, con 751 tests automatizados.",
       },
     ],
   },
@@ -54,7 +54,7 @@ const EXPERIENCE: LocalizedSource<ExperienceEntry>[] = [
       },
       {
         en: "Automated invoicing with an RPA bot (email extraction, CRM registration, document upload), cutting operational time by 40%.",
-        es: "Automaticé la facturación con un bot RPA (extracción de correos, registro en CRM, carga de soportes), reduciendo tiempos operativos en 40%.",
+        es: "Automaticé la facturación con un bot RPA (extracción de correos, registro en CRM, carga de soportes), reduciendo los tiempos operativos en un 40 %.",
       },
       {
         en: "Developed responsive interfaces with React, Astro and Tailwind CSS for Booking Connect and the internal systems.",
@@ -119,6 +119,10 @@ const EXPERIENCE: LocalizedSource<ExperienceEntry>[] = [
       {
         en: "Designed a tourist-centered user experience, with features adapted to the local environment and context.",
         es: "Diseñé la experiencia de usuario centrada en el turista, con funcionalidades adaptadas al entorno y contexto local.",
+      },
+      {
+        en: "SENA's Fondo Emprender recognized it as a high-impact project, and it took part in a public tender held by the city of Cartagena.",
+        es: "El Fondo Emprender del SENA lo reconoció como proyecto de alto impacto, y participó en una licitación pública de la ciudad de Cartagena.",
       },
     ],
   },

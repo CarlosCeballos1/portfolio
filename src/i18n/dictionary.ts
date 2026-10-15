@@ -43,7 +43,7 @@ const en = {
       years: "Years of experience",
       agencies: "Agencies on Booking Connect",
       rpa: "Operational time saved with RPA",
-      hotels: "Hotels on petty cash system",
+      hotels: "Hotels on the petty cash system",
     },
     featured: "// featured projects",
     viewAll: "view all →",
@@ -155,7 +155,7 @@ const es: Dictionary = {
   projects: {
     metaTitle: "Proyectos",
     metaDescription:
-      "Case studies técnicos de Carlos Ceballos: Booking Connect, Pargo, CATOCA, el sistema de ventas de CATOCA, gestión de caja menor y Caminante.",
+      "Casos de estudio técnicos de Carlos Ceballos: Booking Connect, Pargo, CATOCA, el sistema de ventas de CATOCA, gestión de caja menor y Caminante.",
     title: "Proyectos",
     intro:
       "Trabajo profesional en repos privados de empleadores (documentado a fondo, sin exponer código propietario), dos proyectos para un cliente real (uno ya en producción) y proyectos propios, entre ellos un SaaS POS en desarrollo. Cada archivo lleva la extensión del stack que usé para construirlo.",
@@ -175,7 +175,7 @@ const es: Dictionary = {
     metaTitle: "Experiencia",
     metaDescription: "Historial profesional de Carlos Ceballos, en formato de git log.",
     title: "Experiencia",
-    introAfter: " de mi historial profesional. Clic en cada entrada para expandir los detalles.",
+    introAfter: " de mi historial profesional. Haz clic en cada entrada para ver los detalles.",
     showStat: (n: number) => `git show --stat (${n} cambios)`,
   },
   skills: {

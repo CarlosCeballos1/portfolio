@@ -112,7 +112,7 @@ const PROJECTS: LocalizedSource<Project>[] = [
     },
     codeNote: {
       en: "Proprietary GEH Suites code — I no longer have access to the repository after leaving the company. This case study was rebuilt from technical documentation I kept.",
-      es: "Código propietario de GEH Suites — ya no tengo acceso al repositorio tras dejar la empresa. Este case study se reconstruyó a partir de documentación técnica que sí conservo.",
+      es: "Código propietario de GEH Suites — ya no tengo acceso al repositorio tras dejar la empresa. Este caso de estudio se reconstruyó a partir de documentación técnica que sí conservo.",
     },
   },
   {
@@ -126,7 +126,7 @@ const PROJECTS: LocalizedSource<Project>[] = [
     },
     status: "in-development",
     statusLabel: { en: "MVP in demos", es: "MVP en demos" },
-    employer: { en: "Own product", es: "Proyecto propio" },
+    employer: { en: "Personal project", es: "Proyecto personal" },
     period: { en: "Jul 2026 — ongoing", es: "Jul 2026 — en curso" },
     featured: true,
     summary: {
@@ -138,8 +138,8 @@ const PROJECTS: LocalizedSource<Project>[] = [
       es: "Los restaurantes de la Costa Caribe trabajan con cortes de internet frecuentes, facturación electrónica obligatoria y POS genéricos que no descuentan inventario ni cuadran la caja. Los proyectos de referencia que analicé tenían fallas graves: el cliente fijaba los totales, cualquiera podía registrarse como admin y los webhooks de pago no eran idempotentes.",
     },
     myRole: {
-      en: "I design and build it end to end: technical plan, 11 ADRs, multi-tenant PostgreSQL data model, NestJS API, POS and back office in React, public site in Next.js, multi-provider AI package, hardened Docker infrastructure and a local verification pipeline that runs on every push.",
-      es: "Lo diseño y construyo de punta a punta: plan técnico, 11 ADRs, modelo de datos PostgreSQL multi-tenant, API NestJS, caja POS y backoffice en React, web pública en Next.js, paquete de IA multiproveedor, infraestructura Docker endurecida y una verificación local que corre en cada push.",
+      en: "I design and build it end to end: technical plan, 11 ADRs, multi-tenant PostgreSQL data model, NestJS API, POS and back office in React, public site in Next.js, multi-provider AI package, hardened Docker infrastructure and a local verification pipeline that runs on every push. It is my personal project and I built it with AI-assisted development: the AI speeds up the implementation, while the architecture, the data model and every technical decision are mine, documented and justified in the ADRs.",
+      es: "Lo diseño y construyo de punta a punta: plan técnico, 11 ADRs, modelo de datos PostgreSQL multi-tenant, API NestJS, caja POS y backoffice en React, web pública en Next.js, paquete de IA multiproveedor, infraestructura Docker endurecida y una verificación local que corre en cada push. Es mi proyecto personal y lo construí con desarrollo asistido por IA: la IA acelera la implementación, mientras que la arquitectura, el modelo de datos y cada decisión técnica son míos, documentados y justificados en los ADRs.",
     },
     stack: [
       "NestJS 12",
@@ -191,6 +191,16 @@ const PROJECTS: LocalizedSource<Project>[] = [
         body: {
           en: "Review analysis returns structured outputs validated with Zod on Anthropic, OpenAI or Gemini. The reputation score is computed deterministically from stored data, not estimated by the model; review replies always require human approval, each business has a budget and there is an evaluation suite against prompt injection.",
           es: "El análisis de reseñas devuelve salidas estructuradas validadas con Zod sobre Anthropic, OpenAI o Gemini. El puntaje de reputación se calcula de forma determinista con los datos guardados, no lo estima el modelo; las respuestas a reseñas siempre requieren aprobación humana, cada negocio tiene un presupuesto y hay una suite de evaluación contra prompt injection.",
+        },
+      },
+      {
+        title: {
+          en: "AI-assisted development, human-owned decisions",
+          es: "Desarrollo asistido por IA, decisiones propias",
+        },
+        body: {
+          en: "I used AI as a pair programmer to build faster as a single developer, but every decision starts from a real constraint and is recorded in an ADR: a modular monolith because one person can deploy and operate it, with module boundaries that allow splitting it later; RLS so that tenant isolation is enforced by the database rather than depending on every query remembering a filter; an offline POS because internet outages on the coast must not stop sales; and an inventory ledger so stock can be audited. No change gets in without tests against real PostgreSQL, which is how I verify that the generated code does what was decided.",
+          es: "Usé la IA como pair programmer para avanzar más rápido siendo un solo desarrollador, pero cada decisión parte de una restricción real y queda registrada en un ADR: monolito modular porque una sola persona puede desplegarlo y operarlo, con límites entre módulos que permiten separarlo más adelante; RLS para que el aislamiento entre negocios lo garantice la base de datos y no dependa de que cada consulta recuerde un filtro; caja offline porque los cortes de internet en la costa no pueden detener las ventas; e inventario como ledger para que el stock sea auditable. Ningún cambio entra sin pruebas contra PostgreSQL real, que es como verifico que el código generado hace lo que se decidió.",
         },
       },
     ],
@@ -249,8 +259,8 @@ const PROJECTS: LocalizedSource<Project>[] = [
       { src: "/screenshots/pargo/carta-qr.webp", alt: { en: "Public digital menu opened by scanning the QR", es: "Carta digital pública que abre el cliente con el QR" } },
     ],
     codeNote: {
-      en: "Own product in a private repository. Screenshots come from the demo restaurant, with fictitious data.",
-      es: "Proyecto propio en repositorio privado. Las capturas son del restaurante de demostración, con datos ficticios.",
+      en: "Personal project in a private repository, built with AI-assisted development. Screenshots come from the demo restaurant, with fictitious data.",
+      es: "Proyecto personal en repositorio privado, construido con desarrollo asistido por IA. Las capturas son del restaurante de demostración, con datos ficticios.",
     },
   },
   {
@@ -375,7 +385,7 @@ const PROJECTS: LocalizedSource<Project>[] = [
       es: "Sistema interno para registrar las ventas de los vendedores y de la tienda web, controlar inventario por lotes de tostión, calcular y liquidar comisiones, generar prefacturas con los campos de la DIAN y entregarle a la contadora un Excel listo para Siigo Nube.",
     },
     problem: {
-      en: "Sales rep sales, inventory and commissions were tracked separately and by hand. The online store didn't deduct inventory, and the accountant had to rebuild every invoice to load it into Siigo.",
+      en: "Sales reps' sales, inventory and commissions were tracked separately and by hand. The online store didn't deduct inventory, and the accountant had to rebuild every invoice to load it into Siigo.",
       es: "Las ventas de los vendedores, el inventario y las comisiones se llevaban por separado y a mano. La tienda en línea no descontaba inventario, y la contadora tenía que reconstruir cada factura para cargarla en Siigo.",
     },
     myRole: {
@@ -539,7 +549,7 @@ const PROJECTS: LocalizedSource<Project>[] = [
         title: { en: "RPA to automate invoicing", es: "RPA para automatizar facturación" },
         body: {
           en: "A bot reads invoices from email, records them in the CRM (Bitrix24) and attaches the supporting documents automatically, cutting the accounting team's operational time by 40%.",
-          es: "Un bot lee facturas desde correo electrónico, las registra en el CRM (Bitrix24) y adjunta los soportes automáticamente, reduciendo en 40% el tiempo operativo del equipo contable.",
+          es: "Un bot lee facturas desde correo electrónico, las registra en el CRM (Bitrix24) y adjunta los soportes automáticamente, reduciendo en un 40 % el tiempo operativo del equipo contable.",
         },
       },
     ],
@@ -590,7 +600,7 @@ const PROJECTS: LocalizedSource<Project>[] = [
     },
     codeNote: {
       en: "Proprietary GEH Suites code — I still have access to the repository, but it must remain private. This case study uses only technical documentation and does not reproduce real code.",
-      es: "Código propietario de GEH Suites — conservo acceso vigente al repositorio, pero debe permanecer privado. Este case study usa solo documentación técnica y no reproduce código real.",
+      es: "Código propietario de GEH Suites — conservo acceso vigente al repositorio, pero debe permanecer privado. Este caso de estudio usa solo documentación técnica y no reproduce código real.",
     },
   },
   {
@@ -607,12 +617,12 @@ const PROJECTS: LocalizedSource<Project>[] = [
     employer: { en: "Independent project", es: "Proyecto independiente" },
     period: { en: "Jan 2023 — Dec 2023", es: "Ene 2023 — Dic 2023" },
     summary: {
-      en: "Cross-platform mobile app focused on tourism in Cartagena de Indias, with favorites, an activity calendar and shareable routes. I led the technical development end to end as an independent project.",
-      es: "Aplicación móvil multiplataforma enfocada en turismo en Cartagena de Indias, con favoritos, calendario de actividades y rutas para compartir. Lideré el desarrollo técnico de principio a fin como proyecto independiente.",
+      en: "Cross-platform mobile app focused on tourism in Cartagena de Indias, with favorites, an activity calendar and shareable routes. I led the technical development end to end as an independent project. SENA's Fondo Emprender recognized it as a high-impact project, and it took part in a public tender held by the city of Cartagena.",
+      es: "Aplicación móvil multiplataforma enfocada en turismo en Cartagena de Indias, con favoritos, calendario de actividades y rutas para compartir. Lideré el desarrollo técnico de principio a fin como proyecto independiente. El Fondo Emprender del SENA lo reconoció como proyecto de alto impacto, y participó en una licitación pública de la ciudad de Cartagena.",
     },
     problem: {
-      en: "Tourists visiting Cartagena had no app centered on their experience (favorites, planning by date, local recommendations) rather than a dashboard built for the tourism business.",
-      es: "Los turistas que visitan Cartagena no tenían una app centrada en su experiencia (favoritos, planeación por fechas, recomendaciones locales) en lugar de un panel pensado para el negocio turístico.",
+      en: "Tourists visiting Cartagena had no app built around their experience (favorites, planning by date, local recommendations): the existing tools were designed for tourism businesses, not for visitors.",
+      es: "Los turistas que visitan Cartagena no tenían una app pensada para su experiencia (favoritos, planeación por fechas, recomendaciones locales): las herramientas existentes estaban hechas para los negocios turísticos, no para los visitantes.",
     },
     myRole: {
       en: "I led the Flutter development end to end: app architecture, tourist-centered UX design and technical coordination of the project.",
@@ -628,7 +638,7 @@ const PROJECTS: LocalizedSource<Project>[] = [
         },
       },
       {
-        title: { en: "End-to-end technical leadership", es: "Liderazgo técnico end-to-end" },
+        title: { en: "End-to-end technical leadership", es: "Liderazgo técnico de punta a punta" },
         body: {
           en: "I coordinated development from scratch as an independent project, making the Flutter architecture and product scope decisions.",
           es: "Coordiné el desarrollo desde cero como proyecto independiente, tomando las decisiones de arquitectura Flutter y de alcance de producto.",
@@ -638,7 +648,16 @@ const PROJECTS: LocalizedSource<Project>[] = [
     metrics: [
       { label: { en: "Platforms", es: "Plataformas" }, value: "iOS + Android" },
       { label: { en: "Role", es: "Rol" }, value: { en: "Tech lead", es: "Líder técnico" } },
-      { label: { en: "Focus", es: "Enfoque" }, value: { en: "Tourism in Cartagena", es: "Turismo en Cartagena" } },
+      {
+        label: { en: "Recognition", es: "Reconocimiento" },
+        value: { en: "High impact", es: "Alto impacto" },
+        hint: { en: "SENA's Fondo Emprender", es: "Fondo Emprender del SENA" },
+      },
+      {
+        label: { en: "Public tender", es: "Licitación pública" },
+        value: "Cartagena",
+        hint: { en: "city of Cartagena", es: "ciudad de Cartagena" },
+      },
     ],
     codeNote: {
       en: "Own project, with no employer code involved — the repository remains private for now.",
