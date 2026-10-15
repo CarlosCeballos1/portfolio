@@ -37,7 +37,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               {t.home.viewProjects}
             </Link>
             <a
-              href={SITE.cvHref}
+              href={SITE.cvHref[locale]}
               download
               className="rounded-md border border-white/15 px-5 py-2.5 font-mono text-[13.5px] text-ink-secondary transition-colors hover:border-accent/40 hover:text-accent"
             >
