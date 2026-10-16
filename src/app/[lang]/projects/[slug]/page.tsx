@@ -117,6 +117,20 @@ export default async function ProjectPage({ params }: { params: Params }) {
         </div>
       </section>
 
+      {project.video && (
+        <section className="mt-10">
+          <SectionLabel>{t.demo}</SectionLabel>
+          <video
+            src={project.video.src}
+            poster={project.video.poster}
+            controls
+            playsInline
+            preload="metadata"
+            className="mt-3 w-full rounded-md border border-white/8 bg-panel"
+          />
+        </section>
+      )}
+
       {project.gallery && (
         <section className="mt-10">
           <SectionLabel>{t.screenshots}</SectionLabel>

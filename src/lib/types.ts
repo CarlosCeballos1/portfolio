@@ -39,6 +39,12 @@ export interface GalleryImage {
   landscape?: boolean;
 }
 
+export interface ProjectVideo {
+  src: string;
+  /** Imagen que se muestra antes de reproducir. */
+  poster?: string;
+}
+
 export interface Project {
   slug: string;
   fileName: string;
@@ -57,6 +63,7 @@ export interface Project {
   metrics: ProjectMetric[];
   architecture?: Architecture;
   gallery?: GalleryImage[];
+  video?: ProjectVideo;
   liveUrl?: string;
   codeNote: string;
   featured?: boolean;
