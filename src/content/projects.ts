@@ -263,6 +263,10 @@ const PROJECTS: LocalizedSource<Project>[] = [
       { src: "/screenshots/pargo/backoffice.webp", alt: { en: "Back office: daily summary and inventory alerts", es: "Backoffice: resumen del día y alertas de inventario" }, landscape: true },
       { src: "/screenshots/pargo/carta-qr.webp", alt: { en: "Public digital menu opened by scanning the QR", es: "Carta digital pública que abre el cliente con el QR" } },
     ],
+    video: {
+      src: { en: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792192197/pargo-demo-en_xj5wzf.mp4", es: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792190463/brag_fqt61y.mp4" },
+      poster: { en: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792192197/pargo-demo-en_xj5wzf.jpg", es: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792190463/brag_fqt61y.jpg" },
+    },
     codeNote: {
       en: "Personal project in a private repository, built with AI-assisted development. Screenshots come from the demo restaurant, with fictitious data.",
       es: "Proyecto personal en repositorio privado, construido con desarrollo asistido por IA. Las capturas son del restaurante de demostración, con datos ficticios.",
@@ -493,6 +497,10 @@ const PROJECTS: LocalizedSource<Project>[] = [
       { src: "/screenshots/ventas/comisiones.webp", alt: { en: "Commissions: approval and payout per sales rep", es: "Comisiones: aprobación y liquidación por vendedor" }, landscape: true },
       { src: "/screenshots/ventas/inventario.webp", alt: { en: "Batch inventory with roast date", es: "Inventario por lotes con fecha de tostión" }, landscape: true },
     ],
+    video: {
+      src: { en: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792192275/catoca-ventas-en_cfaddq.mp4", es: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792192269/catoca-ventas-es_gwcaft.mp4" },
+      poster: { en: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792192275/catoca-ventas-en_cfaddq.jpg", es: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792192269/catoca-ventas-es_gwcaft.jpg" },
+    },
     codeNote: {
       en: "Private repository. Screenshots taken from a local installation with demo data, not from real operations.",
       es: "Repositorio privado. Capturas tomadas de una instalación local con datos de demostración, no de la operación real.",
