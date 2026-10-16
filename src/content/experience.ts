@@ -57,8 +57,8 @@ const EXPERIENCE: LocalizedSource<ExperienceEntry>[] = [
         es: "Agente orquestador (OpenCLAW), al que solo teníamos acceso el CEO y yo: asignaba tareas a los otros agentes, recogía sus resultados y verificaba la calidad de su trabajo.",
       },
       {
-        en: "Hotel IPTV app: replaced a different traditional TV provider at each hotel with a single IPTV solution, building a Flutter Android TV app on the provider's API with live channels, hotel information, room service, the restaurant menu and the chain's other hotels.",
-        es: "App de IPTV para los hoteles: reemplacé el proveedor de TV tradicional distinto de cada hotel por una sola solución IPTV, con una app en Flutter para Android TV sobre la API del proveedor: canales en vivo, información del hotel, room service, menú del restaurante y los demás hoteles de la cadena.",
+        en: "Hotel IPTV app: replaced a different traditional TV provider at each hotel with a single IPTV solution, building a Flutter Android TV app on the provider's API with live channels, hotel information, room service, the restaurant menu and the chain's other hotels, plus a virtual intercom: guests scanned a QR code with their phone to call reception through a web tool.",
+        es: "App de IPTV para los hoteles: reemplacé el proveedor de TV tradicional distinto de cada hotel por una sola solución IPTV, con una app en Flutter para Android TV sobre la API del proveedor: canales en vivo, información del hotel, room service, menú del restaurante y los demás hoteles de la cadena, además de una citofonía virtual: el huésped escaneaba un código QR con su teléfono y llamaba a recepción mediante una herramienta web.",
       },
       {
         en: "Automation: built an invoicing RPA bot (email extraction, Bitrix24 CRM registration, document upload) that cut operational time by 40%, and daily Python + PostgreSQL ETL processes for hotel occupancy reporting.",
