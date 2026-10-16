@@ -19,6 +19,7 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Skip Next internals and any file with an extension (screenshots, CV, favicon...).
-  matcher: ["/((?!_next/|.*\\..*).*)"],
+  // Skip Next internals, Vercel's own routes (Web Analytics sends page views to /_vercel/insights/view)
+  // and any file with an extension (screenshots, CV, favicon...).
+  matcher: ["/((?!_next/|_vercel/|.*\\..*).*)"],
 };
