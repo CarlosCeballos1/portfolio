@@ -26,8 +26,8 @@ const PROJECTS: LocalizedSource<Project>[] = [
       es: "GEH Suites necesitaba un canal digital único para que agencias de viaje externas consultaran disponibilidad, cotizaran y reservaran habitaciones y vuelos en tiempo real, con reglas de crédito y comisión distintas por agencia, y sin depender de un solo proveedor de inventario.",
     },
     myRole: {
-      en: "I designed, scaled and maintained the API (NestJS + MongoDB), built the complete flight booking module, and integrated the AI agents that automate sales and customer service tasks on top of the same platform.",
-      es: "Diseñé, escalé y mantuve la API (NestJS + MongoDB), construí el módulo completo de reservas de vuelos, e integré los agentes de IA que automatizan tareas comerciales y de atención al cliente sobre la misma plataforma.",
+      en: "I designed, scaled and maintained the API (NestJS + MongoDB), built the complete flight booking module, and rebuilt the whole frontend as a Flutter mobile app on top of the existing API, and built Lucía, the platform's AI agent.",
+      es: "Diseñé, escalé y mantuve la API (NestJS + MongoDB), construí el módulo completo de reservas de vuelos, reconstruí todo el frontend como una app móvil en Flutter sobre la API existente, y construí a Lucía, el agente de IA de la plataforma.",
     },
     stack: [
       "NestJS",
@@ -59,16 +59,21 @@ const PROJECTS: LocalizedSource<Project>[] = [
         },
       },
       {
-        title: { en: "AI agents over the MCP protocol", es: "Agentes de IA sobre el protocolo MCP" },
+        title: { en: "Lucía: an AI booking agent with strict permissions", es: "Lucía: un agente de reservas con permisos estrictos" },
         body: {
-          en: "I designed and deployed agents that expose availability, bookings and quotes through MCP, automating sales and customer service processes without touching the public API.",
-          es: "Diseñé y desplegué agentes que exponen disponibilidad, reservas y cotizaciones a través de MCP, permitiendo automatizar procesos comerciales y de atención al cliente sin tocar la API pública.",
+          en: "Lucía (OpenAI API + MCP) creates, manages and cancels bookings and analyzes booking data in real time, both for agencies and for internal staff. Every tool call goes through the same permission model as the platform, so a user can never get sensitive data they shouldn't see. It handled more than 4,000 reservations while I was at the company.",
+          es: "Lucía (API de OpenAI + MCP) crea, gestiona y cancela reservas y analiza en tiempo real los datos de reservas, tanto para las agencias como para uso interno. Cada acción pasa por el mismo modelo de permisos de la plataforma, así que un usuario nunca obtiene información sensible que no le corresponde. Gestionó más de 4.000 reservas mientras estuve en la empresa.",
         },
       },
     ],
     metrics: [
       { label: { en: "Active travel agencies", es: "Agencias de viaje activas" }, value: { en: "1,000+", es: "+1.000" } },
       { label: { en: "Active users", es: "Usuarios activos" }, value: { en: "1,400+", es: "+1.400" } },
+      {
+        label: { en: "Bookings handled by Lucía", es: "Reservas gestionadas por Lucía" },
+        value: { en: "4,000+", es: "+4.000" },
+        hint: { en: "AI agent · OpenAI + MCP", es: "agente de IA · OpenAI + MCP" },
+      },
       {
         label: { en: "Integrated providers", es: "Proveedores integrados" },
         value: "5",
@@ -87,13 +92,13 @@ const PROJECTS: LocalizedSource<Project>[] = [
       },
       nodes: [
         { id: "fe", label: "Frontend B2B", sublabel: "React + Astro", col: 0, row: 0 },
-        { id: "mobile", label: { en: "Agency app", es: "App agencias" }, sublabel: "Flutter (iOS/Android)", col: 0, row: 2 },
+        { id: "mobile", label: { en: "Mobile app", es: "App móvil" }, sublabel: "Flutter (iOS/Android)", col: 0, row: 2 },
         { id: "api", label: "API Gateway", sublabel: "NestJS · JWT · Swagger", col: 1, row: 1 },
         { id: "reservas", label: { en: "Bookings", es: "Reservas" }, sublabel: "Autocore ⇄ My Tool", col: 2, row: 0 },
         { id: "vuelos", label: { en: "Flights", es: "Vuelos" }, sublabel: "Amadeus · MaarLab", col: 2, row: 1 },
         { id: "pagos", label: { en: "Payments", es: "Pagos" }, sublabel: "Cobre", col: 2, row: 2 },
         { id: "bot", label: { en: "RPA bot", es: "Bot RPA" }, sublabel: { en: "pending bookings", es: "reservas pendientes" }, col: 2, row: 3 },
-        { id: "ia", label: { en: "AI agents", es: "Agentes IA" }, sublabel: { en: "MCP protocol", es: "protocolo MCP" }, col: 2, row: 4 },
+        { id: "ia", label: { en: "Lucía (AI agent)", es: "Lucía (agente IA)" }, sublabel: "OpenAI + MCP", col: 2, row: 4 },
         { id: "db", label: "MongoDB", sublabel: "multi-tenant", col: 3, row: 2 },
       ],
       edges: [
@@ -515,8 +520,8 @@ const PROJECTS: LocalizedSource<Project>[] = [
       es: "Cada hotel del grupo llevaba su caja menor y sus gastos administrativos de forma manual, sin trazabilidad centralizada ni reportes consolidados, y la conciliación de facturas de proveedores era un proceso manual propenso a errores.",
     },
     myRole: {
-      en: "I designed and modeled the database, built the API with Django REST Framework, defined the layered backend architecture, developed the frontend with Astro/React, and automated invoice ingestion with an RPA bot.",
-      es: "Diseñé y modelé la base de datos, construí la API con Django REST Framework, definí la arquitectura por capas del backend, desarrollé el frontend con Astro/React, y automaticé la ingesta de facturas con un bot RPA.",
+      en: "I designed and modeled the database, built the API with Django REST Framework, defined the layered backend architecture, developed the frontend with Astro/React, and automated invoice ingestion with an RPA bot. I also built Federico, an AI accounting assistant (OpenCLAW) that analyzed purchase patterns and generated accounting and petty cash reports.",
+      es: "Diseñé y modelé la base de datos, construí la API con Django REST Framework, definí la arquitectura por capas del backend, desarrollé el frontend con Astro/React, y automaticé la ingesta de facturas con un bot RPA. También construí a Federico, un asistente contable con IA (OpenCLAW) que analizaba patrones de compra y generaba reportes contables y de caja menor.",
     },
     stack: [
       "Django",
