@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: `${SITE.name} — ${SITE.role}`,
     description: t.meta.description,
-    metadataBase: new URL("https://carlosceballos.dev"),
+    metadataBase: new URL(SITE.url),
     alternates: {
       canonical: localizedHref(lang, "/"),
       languages: { en: localizedHref("en", "/"), es: localizedHref("es", "/") },

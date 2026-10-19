@@ -3,6 +3,8 @@ export const SITE = {
   fullName: "Carlos Daniel Ceballos Amor",
   role: "Full Stack Developer",
   location: "Cartagena, Colombia",
+  url: "https://carlosceballos.dev",
+  domain: "carlosceballos.dev",
   email: "carlosdceballos30@gmail.com",
   phoneDisplay: "+57 320 319 8734",
   whatsapp: "https://wa.me/573203198734",
