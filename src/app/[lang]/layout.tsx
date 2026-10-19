@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     },
     openGraph: {
       title: `${SITE.name} — ${SITE.role}`,
-      description: t.meta.roleLong,
+      description: t.meta.description,
       type: "website",
       locale: lang === "en" ? "en_US" : "es_CO",
     },

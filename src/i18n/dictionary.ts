@@ -3,7 +3,7 @@ import type { Locale } from "./config";
 const en = {
   meta: {
     description:
-      "Portfolio of Carlos Ceballos, full stack web developer. Booking Connect, Pargo, CATOCA and more real-world projects.",
+      "Full stack developer in Cartagena, Colombia. TypeScript, React, NestJS and Python. A booking platform for 1,000+ travel agencies and an AI agent with 4,000+ bookings.",
     roleLong: "Full Stack Web Developer — Frontend · Backend · Mobile",
   },
   nav: {
@@ -105,7 +105,7 @@ export type Dictionary = typeof en;
 const es: Dictionary = {
   meta: {
     description:
-      "Portafolio de Carlos Ceballos, desarrollador web full stack. Booking Connect, Pargo, CATOCA y más proyectos reales.",
+      "Desarrollador full stack en Cartagena, Colombia. TypeScript, React, NestJS y Python. Una plataforma de reservas para +1.000 agencias y un agente de IA con +4.000 reservas.",
     roleLong: "Desarrollador Web Full Stack — Frontend · Backend · Mobile",
   },
   nav: {
