@@ -4,6 +4,123 @@ import { localize, type Locale, type LocalizedSource } from "@/i18n/config";
 // Every text can be written as a plain string (same in both languages) or as { en, es }.
 const PROJECTS: LocalizedSource<Project>[] = [
   {
+    slug: "lucia",
+    fileName: "lucia.agent.ts",
+    extensionLabel: "OpenAI · MCP · NestJS",
+    name: { en: "Lucía · AI booking agent", es: "Lucía · Agente de reservas con IA" },
+    tagline: {
+      en: "An AI agent that books, manages and cancels reservations inside a B2B platform, under its real permissions",
+      es: "Un agente de IA que crea, gestiona y cancela reservas dentro de una plataforma B2B, con sus permisos reales",
+    },
+    status: "production",
+    statusLabel: { en: "In production", es: "En producción" },
+    employer: "GEH Suites · Booking Connect",
+    period: { en: "Feb 2025 — Jun 2026", es: "Feb 2025 — Jun 2026" },
+    featured: true,
+    summary: {
+      en: "Lucía is the AI agent of Booking Connect, a B2B booking platform used by 1,000+ travel agencies. Built on the OpenAI API and MCP, it doesn't just answer questions: it creates, manages and cancels bookings and analyzes booking data in real time, for agencies and for internal staff, always with the permissions of the user it is talking to. It handled 4,000+ bookings while I was at the company.",
+      es: "Lucía es el agente de IA de Booking Connect, una plataforma B2B de reservas usada por más de 1.000 agencias de viaje. Construida sobre la API de OpenAI y MCP, no solo responde preguntas: crea, gestiona y cancela reservas y analiza datos de reservas en tiempo real, para las agencias y para el equipo interno, siempre con los permisos del usuario con el que habla. Gestionó más de 4.000 reservas mientras estuve en la empresa.",
+    },
+    problem: {
+      en: "Booking Connect serves two very different audiences: external travel agencies, each with its own users, roles, credit policies and commissions, and GEH Suites' internal staff. Both had to go through the platform's screens for every quote, booking, change or report. An assistant that could act on their behalf was only useful if it could take real actions — and only safe if it could never show one agency another agency's data or let a user do something their role doesn't allow.",
+      es: "Booking Connect atiende a dos públicos muy distintos: agencias de viaje externas, cada una con sus usuarios, roles, políticas de crédito y comisiones, y el equipo interno de GEH Suites. Ambos tenían que pasar por las pantallas de la plataforma para cada cotización, reserva, cambio o reporte. Un asistente que actuara por ellos solo era útil si podía ejecutar acciones reales — y solo era seguro si nunca podía mostrarle a una agencia los datos de otra ni dejar que un usuario hiciera algo que su rol no permite.",
+    },
+    myRole: {
+      en: "I designed and built Lucía end to end: the agent on the OpenAI API, the MCP tools it uses to work with Booking Connect (create, manage and cancel bookings, and query booking data), and the connection between those tools and the platform's permission model, so the agent acts with exactly the permissions of the user in the conversation. I also maintained the API those tools run on.",
+      es: "Diseñé y construí a Lucía de punta a punta: el agente sobre la API de OpenAI, las herramientas MCP con las que trabaja sobre Booking Connect (crear, gestionar y cancelar reservas, y consultar datos de reservas) y la conexión entre esas herramientas y el modelo de permisos de la plataforma, para que el agente actúe exactamente con los permisos del usuario de la conversación. También mantenía la API sobre la que corren esas herramientas.",
+    },
+    stack: [
+      "OpenAI API",
+      { en: "MCP (Model Context Protocol)", es: "MCP (Model Context Protocol)" },
+      { en: "Tool calling", es: "Tool calling" },
+      "NestJS",
+      "TypeScript",
+      "MongoDB",
+      "Passport JWT",
+    ],
+    decisions: [
+      {
+        title: { en: "Tools that take actions, not just answers", es: "Herramientas que ejecutan acciones, no solo respuestas" },
+        body: {
+          en: "Lucía's value is that it closes the loop: the MCP tools let it create, modify and cancel real bookings and pull live booking data, instead of explaining to the user which screen to open. Each tool maps to one concrete operation of the platform.",
+          es: "El valor de Lucía es que cierra el ciclo: las herramientas MCP le permiten crear, modificar y cancelar reservas reales y consultar datos en vivo, en vez de explicarle al usuario qué pantalla abrir. Cada herramienta corresponde a una operación concreta de la plataforma.",
+        },
+      },
+      {
+        title: { en: "The platform's permission model, not a new one", es: "El modelo de permisos de la plataforma, no uno nuevo" },
+        body: {
+          en: "Every tool call goes through the same permission model as the rest of Booking Connect: the agency, the role and the limits of the user in the conversation. The model can ask for anything, but it can only get what that user could get through the normal interface, so sensitive data never reaches someone who shouldn't see it.",
+          es: "Cada llamada a una herramienta pasa por el mismo modelo de permisos que el resto de Booking Connect: la agencia, el rol y los límites del usuario de la conversación. El modelo puede pedir cualquier cosa, pero solo obtiene lo que ese usuario podría obtener por la interfaz normal, así que la información sensible nunca llega a quien no le corresponde.",
+        },
+      },
+      {
+        title: { en: "One agent, two audiences", es: "Un agente, dos públicos" },
+        body: {
+          en: "Agencies use Lucía to book and manage their own reservations; internal staff use it to analyze booking data across the platform. It is the same agent with the same tools — what changes is the scope the permission model gives each user.",
+          es: "Las agencias usan a Lucía para reservar y gestionar sus propias reservas; el equipo interno la usa para analizar los datos de reservas de toda la plataforma. Es el mismo agente con las mismas herramientas — lo que cambia es el alcance que el modelo de permisos le da a cada usuario.",
+        },
+      },
+      {
+        title: { en: "Part of a small agent system", es: "Parte de un pequeño sistema de agentes" },
+        body: {
+          en: "Lucía was one of three production agents I built at GEH Suites, alongside Federico (an accounting assistant on the petty cash data) and an orchestrator, restricted to the CEO and me, that assigned tasks to the other agents and checked the quality of their work.",
+          es: "Lucía fue uno de los tres agentes en producción que construí en GEH Suites, junto a Federico (un asistente contable sobre los datos de caja menor) y un orquestador, al que solo teníamos acceso el CEO y yo, que asignaba tareas a los otros agentes y verificaba la calidad de su trabajo.",
+        },
+      },
+    ],
+    metrics: [
+      {
+        label: { en: "Bookings handled", es: "Reservas gestionadas" },
+        value: { en: "4,000+", es: "+4.000" },
+        hint: { en: "while I was at the company", es: "mientras estuve en la empresa" },
+      },
+      {
+        label: { en: "Platform it runs on", es: "Plataforma donde opera" },
+        value: { en: "1,000+ agencies", es: "+1.000 agencias" },
+        hint: { en: "Booking Connect (platform figure)", es: "Booking Connect (cifra de la plataforma)" },
+      },
+      {
+        label: { en: "Actions", es: "Acciones" },
+        value: { en: "Create · manage · cancel", es: "Crear · gestionar · cancelar" },
+        hint: { en: "+ real-time booking analytics", es: "+ análisis de reservas en tiempo real" },
+      },
+      {
+        label: { en: "Audiences", es: "Públicos" },
+        value: "2",
+        hint: { en: "travel agencies · internal staff", es: "agencias de viaje · equipo interno" },
+      },
+    ],
+    architecture: {
+      note: {
+        en: "Simplified view, rebuilt from internal technical documentation — without exposing proprietary code.",
+        es: "Vista simplificada, reconstruida a partir de documentación técnica interna — sin exponer código propietario.",
+      },
+      nodes: [
+        { id: "agency", label: { en: "Agency user", es: "Usuario de agencia" }, sublabel: { en: "book · manage · cancel", es: "reservar · gestionar · cancelar" }, col: 0, row: 0 },
+        { id: "staff", label: { en: "Internal staff", es: "Equipo interno" }, sublabel: { en: "booking analytics", es: "análisis de reservas" }, col: 0, row: 2 },
+        { id: "lucia", label: "Lucía", sublabel: "OpenAI API · tool calling", col: 1, row: 1 },
+        { id: "mcp", label: { en: "MCP tools", es: "Herramientas MCP" }, sublabel: { en: "one per platform operation", es: "una por operación" }, col: 2, row: 1 },
+        { id: "perm", label: { en: "Permission model", es: "Modelo de permisos" }, sublabel: { en: "agency · role · limits", es: "agencia · rol · límites" }, col: 3, row: 0 },
+        { id: "api", label: "Booking Connect API", sublabel: "NestJS · MongoDB", col: 3, row: 2 },
+      ],
+      edges: [
+        { from: "agency", to: "lucia" },
+        { from: "staff", to: "lucia" },
+        { from: "lucia", to: "mcp", label: "MCP" },
+        { from: "mcp", to: "perm", dashed: true },
+        { from: "mcp", to: "api" },
+      ],
+    },
+    outcome: {
+      en: "Lucía went live inside Booking Connect for agencies and internal staff and handled 4,000+ bookings while I was at the company, without exposing data across agencies.",
+      es: "Lucía entró en producción dentro de Booking Connect para las agencias y el equipo interno y gestionó más de 4.000 reservas mientras estuve en la empresa, sin exponer datos entre agencias.",
+    },
+    codeNote: {
+      en: "Proprietary GEH Suites code — I no longer have access to the repository after leaving the company. This case study was rebuilt from technical documentation I kept.",
+      es: "Código propietario de GEH Suites — ya no tengo acceso al repositorio tras dejar la empresa. Este caso de estudio se reconstruyó a partir de documentación técnica que sí conservo.",
+    },
+  },
+  {
     slug: "booking-connect",
     fileName: "booking-connect.nest.ts",
     extensionLabel: "NestJS · MongoDB",
@@ -61,8 +178,8 @@ const PROJECTS: LocalizedSource<Project>[] = [
       {
         title: { en: "Lucía: an AI booking agent with strict permissions", es: "Lucía: un agente de reservas con permisos estrictos" },
         body: {
-          en: "Lucía (OpenAI API + MCP) creates, manages and cancels bookings and analyzes booking data in real time, both for agencies and for internal staff. Every tool call goes through the same permission model as the platform, so a user can never get sensitive data they shouldn't see. It handled more than 4,000 reservations while I was at the company.",
-          es: "Lucía (API de OpenAI + MCP) crea, gestiona y cancela reservas y analiza en tiempo real los datos de reservas, tanto para las agencias como para uso interno. Cada acción pasa por el mismo modelo de permisos de la plataforma, así que un usuario nunca obtiene información sensible que no le corresponde. Gestionó más de 4.000 reservas mientras estuve en la empresa.",
+          en: "Lucía (OpenAI API + MCP) creates, manages and cancels bookings and analyzes booking data in real time, both for agencies and for internal staff. Every tool call goes through the same permission model as the platform, so a user can never get sensitive data they shouldn't see. It handled more than 4,000 reservations while I was at the company — full write-up in its own case study.",
+          es: "Lucía (API de OpenAI + MCP) crea, gestiona y cancela reservas y analiza en tiempo real los datos de reservas, tanto para las agencias como para uso interno. Cada acción pasa por el mismo modelo de permisos de la plataforma, así que un usuario nunca obtiene información sensible que no le corresponde. Gestionó más de 4.000 reservas mientras estuve en la empresa — el detalle está en su propio caso de estudio.",
         },
       },
     ],
@@ -115,9 +232,128 @@ const PROJECTS: LocalizedSource<Project>[] = [
         { from: "bot", to: "db", dashed: true },
       ],
     },
+    outcome: {
+      en: "The platform kept serving 1,000+ travel agencies and 1,400+ active users while I scaled it. The flight module and the Flutter app shipped on top of the same API, and Lucía, the AI agent I built for it, handled 4,000+ bookings before I left the company (see its own case study).",
+      es: "La plataforma siguió atendiendo a más de 1.000 agencias y 1.400 usuarios activos mientras la escalaba. El módulo de vuelos y la app en Flutter salieron sobre la misma API, y Lucía, el agente de IA que construí para ella, gestionó más de 4.000 reservas antes de que yo dejara la empresa (ver su propio caso de estudio).",
+    },
     codeNote: {
       en: "Proprietary GEH Suites code — I no longer have access to the repository after leaving the company. This case study was rebuilt from technical documentation I kept.",
       es: "Código propietario de GEH Suites — ya no tengo acceso al repositorio tras dejar la empresa. Este caso de estudio se reconstruyó a partir de documentación técnica que sí conservo.",
+    },
+  },
+  {
+    slug: "gestion-caja-menor",
+    fileName: "caja-menor.django.py",
+    extensionLabel: "Django REST · Astro",
+    name: { en: "Petty Cash Management", es: "Gestión de Caja Menor" },
+    tagline: {
+      en: "Petty cash, purchase requests and invoicing for the accounting team of 13 hotels",
+      es: "Caja menor, requisiciones y facturación para el equipo contable de 13 hoteles",
+    },
+    status: "production",
+    statusLabel: { en: "In production", es: "En producción" },
+    employer: "GEH Suites",
+    period: { en: "Feb 2025 — Jun 2026", es: "Feb 2025 — Jun 2026" },
+    featured: true,
+    summary: {
+      en: "Expense management system for 13 hotel properties: expense tracking, petty cash, purchase requests and procurement, real-time statistics and automatic PDF and Excel reports.",
+      es: "Sistema de gestión de gastos financieros para 13 propiedades hoteleras: registro de gastos, manejo de caja menor, requisiciones y compras, estadísticas en tiempo real y generación automática de reportes en PDF y Excel.",
+    },
+    problem: {
+      en: "The real users were the chain's accounting team plus the administrators and cashiers of 13 hotels. Each hotel handled its petty cash and administrative expenses manually, with no centralized traceability or consolidated reports, and the accounting team reconciled supplier invoices by hand: reading them from email, registering them in the CRM and attaching the supporting documents one by one.",
+      es: "Los usuarios reales eran el equipo contable de la cadena y los administradores y cajeros de 13 hoteles. Cada hotel llevaba su caja menor y sus gastos administrativos de forma manual, sin trazabilidad centralizada ni reportes consolidados, y el equipo contable conciliaba las facturas de proveedores a mano: leerlas del correo, registrarlas en el CRM y adjuntar los soportes una por una.",
+    },
+    myRole: {
+      en: "I designed and modeled the database, built the API with Django REST Framework, defined the layered backend architecture, developed the frontend with Astro/React, and automated invoice ingestion with an RPA bot. I also built Federico, an AI accounting assistant (OpenCLAW) that analyzed purchase patterns and generated accounting and petty cash reports.",
+      es: "Diseñé y modelé la base de datos, construí la API con Django REST Framework, definí la arquitectura por capas del backend, desarrollé el frontend con Astro/React, y automaticé la ingesta de facturas con un bot RPA. También construí a Federico, un asistente contable con IA (OpenCLAW) que analizaba patrones de compra y generaba reportes contables y de caja menor.",
+    },
+    stack: [
+      "Django",
+      "Django REST Framework",
+      "PostgreSQL",
+      "Redis",
+      "Astro",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Docker",
+      "Bitrix24 API",
+    ],
+    decisions: [
+      {
+        title: { en: "Services as the single source of business logic", es: "Servicios como única fuente de lógica de negocio" },
+        body: {
+          en: "DRF views only translate HTTP; all balance calculations, validation and cash allocation live in an independent service layer, which kept the system testable while scaling to 13 hotels.",
+          es: "Las vistas de DRF solo traducen HTTP; todo cálculo de saldos, validación y asignación de caja vive en una capa de servicios independiente, lo que mantuvo el sistema testeable al escalar a 13 hoteles.",
+        },
+      },
+      {
+        title: { en: "Routing to multiple databases", es: "Enrutamiento a múltiples bases de datos" },
+        body: {
+          en: "I split petty cash, purchase requests and processed invoices into three separate PostgreSQL databases with a dedicated router, so the growth of one module wouldn't degrade the performance of the others.",
+          es: "Separé caja menor, requisiciones y facturas procesadas en tres bases PostgreSQL distintas con un router dedicado, para que el crecimiento de un módulo no degradara el rendimiento de los otros.",
+        },
+      },
+      {
+        title: { en: "RPA to automate invoicing", es: "RPA para automatizar facturación" },
+        body: {
+          en: "A bot reads invoices from email, records them in the CRM (Bitrix24) and attaches the supporting documents automatically, cutting the accounting team's operational time by 40%.",
+          es: "Un bot lee facturas desde correo electrónico, las registra en el CRM (Bitrix24) y adjunta los soportes automáticamente, reduciendo en un 40 % el tiempo operativo del equipo contable.",
+        },
+      },
+    ],
+    metrics: [
+      { label: { en: "Hotels managed", es: "Hoteles gestionados" }, value: "13" },
+      { label: { en: "Time reduction (RPA)", es: "Reducción de tiempos (RPA)" }, value: "-40%" },
+      {
+        label: { en: "Databases", es: "Bases de datos" },
+        value: "3",
+        hint: { en: "PostgreSQL routed by domain", es: "PostgreSQL enrutadas por dominio" },
+      },
+      {
+        label: { en: "Access roles", es: "Roles de acceso" },
+        value: "5",
+        hint: {
+          en: "admin · manager · cashier · accountant · purchasing",
+          es: "admin · gerente · cajero · contador · compras",
+        },
+      },
+    ],
+    architecture: {
+      note: {
+        en: "Simplified view of the real system, rebuilt from internal technical documentation — without exposing proprietary code.",
+        es: "Vista simplificada del sistema real, reconstruida a partir de documentación técnica interna — sin exponer código propietario.",
+      },
+      nodes: [
+        { id: "fe", label: "Frontend", sublabel: "Astro + React + TS", col: 0, row: 1 },
+        { id: "api", label: "API Django", sublabel: "DRF · Views", col: 1, row: 1 },
+        { id: "svc", label: { en: "Service layer", es: "Capa de servicios" }, sublabel: { en: "business logic", es: "lógica de negocio" }, col: 2, row: 1 },
+        { id: "cache", label: "Redis", sublabel: { en: "query cache", es: "cache de queries" }, col: 2, row: 0 },
+        { id: "bot", label: { en: "RPA bot", es: "Bot RPA" }, sublabel: { en: "invoices by email", es: "facturas por email" }, col: 1, row: 3 },
+        { id: "bitrix", label: "Bitrix24", sublabel: { en: "external CRM", es: "CRM externo" }, col: 3, row: 3 },
+        { id: "dbDefault", label: "PostgreSQL", sublabel: "caja_menor", col: 3, row: 0 },
+        { id: "dbReq", label: "PostgreSQL", sublabel: { en: "purchase requests", es: "requisiciones" }, col: 3, row: 1 },
+        { id: "dbFact", label: "PostgreSQL", sublabel: { en: "invoices", es: "facturas" }, col: 3, row: 2 },
+      ],
+      edges: [
+        { from: "fe", to: "api" },
+        { from: "api", to: "svc" },
+        { from: "svc", to: "cache", label: "cache", dashed: true },
+        { from: "svc", to: "dbDefault" },
+        { from: "svc", to: "dbReq" },
+        { from: "svc", to: "dbFact" },
+        { from: "api", to: "bot", label: "cron", dashed: true },
+        { from: "bot", to: "bitrix", label: "sync" },
+        { from: "bot", to: "dbFact" },
+      ],
+    },
+    outcome: {
+      en: "The system went live across the chain's 13 hotels and became the daily tool of the accounting team and each hotel's administrators and cashiers. The invoicing RPA bot cut the accounting team's operational time by 40%, and Federico, the AI accounting assistant, was built on top of the same data.",
+      es: "El sistema entró en producción en los 13 hoteles de la cadena y se volvió la herramienta diaria del equipo contable y de los administradores y cajeros de cada hotel. El bot RPA de facturación redujo en un 40 % el tiempo operativo del equipo contable, y Federico, el asistente contable con IA, se construyó sobre los mismos datos.",
+    },
+    codeNote: {
+      en: "Proprietary GEH Suites code — I still have access to the repository, but it must remain private. This case study uses only technical documentation and does not reproduce real code.",
+      es: "Código propietario de GEH Suites — conservo acceso vigente al repositorio, pero debe permanecer privado. Este caso de estudio usa solo documentación técnica y no reproduce código real.",
     },
   },
   {
@@ -267,6 +503,10 @@ const PROJECTS: LocalizedSource<Project>[] = [
       src: { en: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792192197/pargo-demo-en_xj5wzf.mp4", es: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792190463/brag_fqt61y.mp4" },
       poster: { en: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792192197/pargo-demo-en_xj5wzf.jpg", es: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792190463/brag_fqt61y.jpg" },
     },
+    outcome: {
+      en: "It is an MVP I'm showing to restaurants in demos — not a consolidated product yet. Next steps are integrating Factus for real DIAN invoicing and running a pilot with a first restaurant.",
+      es: "Es un MVP que estoy mostrando a restaurantes en demos — todavía no es un producto consolidado. Los siguientes pasos son integrar Factus para la facturación DIAN real y hacer un piloto con un primer restaurante.",
+    },
     codeNote: {
       en: "Personal project in a private repository, built with AI-assisted development. Screenshots come from the demo restaurant, with fictitious data.",
       es: "Proyecto personal en repositorio privado, construido con desarrollo asistido por IA. Las capturas son del restaurante de demostración, con datos ficticios.",
@@ -285,7 +525,6 @@ const PROJECTS: LocalizedSource<Project>[] = [
     statusLabel: { en: "In production", es: "En producción" },
     employer: { en: "CATOCA (client)", es: "CATOCA (cliente)" },
     period: { en: "Jul 2026 — present", es: "Jul 2026 — actualidad" },
-    featured: true,
     liveUrl: "https://www.catoca.cafe",
     summary: {
       en: "Production site for CATOCA (“More than a coffee, a conversation that awakens”): brand landing page, origin story, store with filters by presentation, product page with sensory profile, side cart, Wompi checkout and automatic confirmation emails.",
@@ -370,6 +609,10 @@ const PROJECTS: LocalizedSource<Project>[] = [
       { src: "/screenshots/catoca/origen.webp", alt: { en: "“Our origin” page", es: "Página «Nuestro origen»" }, landscape: true },
       { src: "/screenshots/catoca/home-mobile.webp", alt: { en: "Home on mobile", es: "Portada en móvil" } },
     ],
+    outcome: {
+      en: "The site is live at catoca.cafe and takes real orders and payments through Wompi. The same client then hired me to build their internal sales system, which consumes the store's orders.",
+      es: "El sitio está en vivo en catoca.cafe y recibe pedidos y pagos reales con Wompi. El mismo cliente me contrató después para construir su sistema interno de ventas, que consume los pedidos de la tienda.",
+    },
     codeNote: {
       en: "Project for a real client. The repository is private; the site is live at catoca.cafe.",
       es: "Proyecto para un cliente real. El repositorio es privado; el sitio está en vivo en catoca.cafe.",
@@ -388,7 +631,6 @@ const PROJECTS: LocalizedSource<Project>[] = [
     statusLabel: { en: "In development", es: "En desarrollo" },
     employer: { en: "CATOCA (client)", es: "CATOCA (cliente)" },
     period: { en: "Sep 2026 — ongoing", es: "Sep 2026 — en curso" },
-    featured: true,
     summary: {
       en: "Internal system to record sales from sales reps and the online store, track inventory by roast batch, calculate and pay out commissions, generate pre-invoices with DIAN fields and hand the accountant an Excel file ready for Siigo Nube.",
       es: "Sistema interno para registrar las ventas de los vendedores y de la tienda web, controlar inventario por lotes de tostión, calcular y liquidar comisiones, generar prefacturas con los campos de la DIAN y entregarle a la contadora un Excel listo para Siigo Nube.",
@@ -501,119 +743,13 @@ const PROJECTS: LocalizedSource<Project>[] = [
       src: { en: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792192275/catoca-ventas-en_cfaddq.mp4", es: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792192269/catoca-ventas-es_gwcaft.mp4" },
       poster: { en: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792192275/catoca-ventas-en_cfaddq.jpg", es: "https://res.cloudinary.com/dr5v2l6nr/video/upload/v1792192269/catoca-ventas-es_gwcaft.jpg" },
     },
+    outcome: {
+      en: "Still in development and delivered in phases with the client; the store already sends its orders through the API and the accountant gets the Siigo export.",
+      es: "Sigue en desarrollo y se entrega por fases con el cliente; la tienda ya envía sus pedidos por la API y la contadora recibe el exporte para Siigo.",
+    },
     codeNote: {
       en: "Private repository. Screenshots taken from a local installation with demo data, not from real operations.",
       es: "Repositorio privado. Capturas tomadas de una instalación local con datos de demostración, no de la operación real.",
-    },
-  },
-  {
-    slug: "gestion-caja-menor",
-    fileName: "caja-menor.django.py",
-    extensionLabel: "Django REST · Astro",
-    name: { en: "Petty Cash Management", es: "Gestión de Caja Menor" },
-    tagline: {
-      en: "Multi-hotel finance system: expenses, petty cash and purchase requests",
-      es: "Sistema financiero multi-hotel: gastos, caja menor y requisiciones",
-    },
-    status: "production",
-    statusLabel: { en: "In production", es: "En producción" },
-    employer: "GEH Suites",
-    period: { en: "Feb 2025 — Jun 2026", es: "Feb 2025 — Jun 2026" },
-    summary: {
-      en: "Expense management system for 13 hotel properties: expense tracking, petty cash, purchase requests and procurement, real-time statistics and automatic PDF and Excel reports.",
-      es: "Sistema de gestión de gastos financieros para 13 propiedades hoteleras: registro de gastos, manejo de caja menor, requisiciones y compras, estadísticas en tiempo real y generación automática de reportes en PDF y Excel.",
-    },
-    problem: {
-      en: "Each hotel in the group handled its petty cash and administrative expenses manually, with no centralized traceability or consolidated reports, and reconciling supplier invoices was an error-prone manual process.",
-      es: "Cada hotel del grupo llevaba su caja menor y sus gastos administrativos de forma manual, sin trazabilidad centralizada ni reportes consolidados, y la conciliación de facturas de proveedores era un proceso manual propenso a errores.",
-    },
-    myRole: {
-      en: "I designed and modeled the database, built the API with Django REST Framework, defined the layered backend architecture, developed the frontend with Astro/React, and automated invoice ingestion with an RPA bot. I also built Federico, an AI accounting assistant (OpenCLAW) that analyzed purchase patterns and generated accounting and petty cash reports.",
-      es: "Diseñé y modelé la base de datos, construí la API con Django REST Framework, definí la arquitectura por capas del backend, desarrollé el frontend con Astro/React, y automaticé la ingesta de facturas con un bot RPA. También construí a Federico, un asistente contable con IA (OpenCLAW) que analizaba patrones de compra y generaba reportes contables y de caja menor.",
-    },
-    stack: [
-      "Django",
-      "Django REST Framework",
-      "PostgreSQL",
-      "Redis",
-      "Astro",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Docker",
-      "Bitrix24 API",
-    ],
-    decisions: [
-      {
-        title: { en: "Services as the single source of business logic", es: "Servicios como única fuente de lógica de negocio" },
-        body: {
-          en: "DRF views only translate HTTP; all balance calculations, validation and cash allocation live in an independent service layer, which kept the system testable while scaling to 13 hotels.",
-          es: "Las vistas de DRF solo traducen HTTP; todo cálculo de saldos, validación y asignación de caja vive en una capa de servicios independiente, lo que mantuvo el sistema testeable al escalar a 13 hoteles.",
-        },
-      },
-      {
-        title: { en: "Routing to multiple databases", es: "Enrutamiento a múltiples bases de datos" },
-        body: {
-          en: "I split petty cash, purchase requests and processed invoices into three separate PostgreSQL databases with a dedicated router, so the growth of one module wouldn't degrade the performance of the others.",
-          es: "Separé caja menor, requisiciones y facturas procesadas en tres bases PostgreSQL distintas con un router dedicado, para que el crecimiento de un módulo no degradara el rendimiento de los otros.",
-        },
-      },
-      {
-        title: { en: "RPA to automate invoicing", es: "RPA para automatizar facturación" },
-        body: {
-          en: "A bot reads invoices from email, records them in the CRM (Bitrix24) and attaches the supporting documents automatically, cutting the accounting team's operational time by 40%.",
-          es: "Un bot lee facturas desde correo electrónico, las registra en el CRM (Bitrix24) y adjunta los soportes automáticamente, reduciendo en un 40 % el tiempo operativo del equipo contable.",
-        },
-      },
-    ],
-    metrics: [
-      { label: { en: "Hotels managed", es: "Hoteles gestionados" }, value: "13" },
-      { label: { en: "Time reduction (RPA)", es: "Reducción de tiempos (RPA)" }, value: "-40%" },
-      {
-        label: { en: "Databases", es: "Bases de datos" },
-        value: "3",
-        hint: { en: "PostgreSQL routed by domain", es: "PostgreSQL enrutadas por dominio" },
-      },
-      {
-        label: { en: "Access roles", es: "Roles de acceso" },
-        value: "5",
-        hint: {
-          en: "admin · manager · cashier · accountant · purchasing",
-          es: "admin · gerente · cajero · contador · compras",
-        },
-      },
-    ],
-    architecture: {
-      note: {
-        en: "Simplified view of the real system, rebuilt from internal technical documentation — without exposing proprietary code.",
-        es: "Vista simplificada del sistema real, reconstruida a partir de documentación técnica interna — sin exponer código propietario.",
-      },
-      nodes: [
-        { id: "fe", label: "Frontend", sublabel: "Astro + React + TS", col: 0, row: 1 },
-        { id: "api", label: "API Django", sublabel: "DRF · Views", col: 1, row: 1 },
-        { id: "svc", label: { en: "Service layer", es: "Capa de servicios" }, sublabel: { en: "business logic", es: "lógica de negocio" }, col: 2, row: 1 },
-        { id: "cache", label: "Redis", sublabel: { en: "query cache", es: "cache de queries" }, col: 2, row: 0 },
-        { id: "bot", label: { en: "RPA bot", es: "Bot RPA" }, sublabel: { en: "invoices by email", es: "facturas por email" }, col: 1, row: 3 },
-        { id: "bitrix", label: "Bitrix24", sublabel: { en: "external CRM", es: "CRM externo" }, col: 3, row: 3 },
-        { id: "dbDefault", label: "PostgreSQL", sublabel: "caja_menor", col: 3, row: 0 },
-        { id: "dbReq", label: "PostgreSQL", sublabel: { en: "purchase requests", es: "requisiciones" }, col: 3, row: 1 },
-        { id: "dbFact", label: "PostgreSQL", sublabel: { en: "invoices", es: "facturas" }, col: 3, row: 2 },
-      ],
-      edges: [
-        { from: "fe", to: "api" },
-        { from: "api", to: "svc" },
-        { from: "svc", to: "cache", label: "cache", dashed: true },
-        { from: "svc", to: "dbDefault" },
-        { from: "svc", to: "dbReq" },
-        { from: "svc", to: "dbFact" },
-        { from: "api", to: "bot", label: "cron", dashed: true },
-        { from: "bot", to: "bitrix", label: "sync" },
-        { from: "bot", to: "dbFact" },
-      ],
-    },
-    codeNote: {
-      en: "Proprietary GEH Suites code — I still have access to the repository, but it must remain private. This case study uses only technical documentation and does not reproduce real code.",
-      es: "Código propietario de GEH Suites — conservo acceso vigente al repositorio, pero debe permanecer privado. Este caso de estudio usa solo documentación técnica y no reproduce código real.",
     },
   },
   {
@@ -672,6 +808,10 @@ const PROJECTS: LocalizedSource<Project>[] = [
         hint: { en: "city of Cartagena", es: "ciudad de Cartagena" },
       },
     ],
+    outcome: {
+      en: "SENA's Fondo Emprender recognized it as a high-impact project and it took part in a public tender held by the city of Cartagena. The project is now archived.",
+      es: "El Fondo Emprender del SENA lo reconoció como proyecto de alto impacto y participó en una licitación pública de la ciudad de Cartagena. Hoy el proyecto está archivado.",
+    },
     codeNote: {
       en: "Own project, with no employer code involved — the repository remains private for now.",
       es: "Proyecto propio, sin código de un empleador de por medio — el repositorio se mantiene privado por ahora.",

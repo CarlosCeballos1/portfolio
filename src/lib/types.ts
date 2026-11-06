@@ -65,6 +65,8 @@ export interface Project {
   gallery?: GalleryImage[];
   video?: ProjectVideo;
   liveUrl?: string;
+  /** What happened after it shipped. */
+  outcome?: string;
   codeNote: string;
   featured?: boolean;
 }

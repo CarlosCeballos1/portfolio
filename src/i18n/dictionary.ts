@@ -3,8 +3,8 @@ import type { Locale } from "./config";
 const en = {
   meta: {
     description:
-      "Portfolio of Carlos Ceballos, full stack web developer. Booking Connect, Pargo, CATOCA and more real-world projects.",
-    roleLong: "Full Stack Web Developer — Frontend · Backend · Mobile",
+      "Carlos Ceballos, Full Stack Engineer · AI agents & integrations for B2B platforms. Lucía (OpenAI + MCP booking agent), Booking Connect, petty cash for 13 hotels and more production work.",
+    roleLong: "Full Stack Engineer · AI agents & integrations for B2B platforms",
   },
   nav: {
     home: { fileName: "home.tsx", label: "Home" },
@@ -34,39 +34,41 @@ const en = {
     downloadCv: "Download CV (PDF)",
   },
   home: {
-    headline: "I build software that scales,",
-    headlineAccent: "from the database to the interface.",
+    headline: "I build B2B platforms, integrations and AI agents",
+    headlineAccent: "that run real business operations.",
     intro: (name: string) =>
-      `I'm ${name}, a full stack developer based in Cartagena, Colombia. I design APIs, databases and frontends for real B2B products — from a hotel booking platform used by 1,000+ travel agencies to a multi-tenant POS that keeps selling without internet and AI agents that automate business processes.`,
+      `I'm ${name}, a full stack engineer based in Cartagena, Colombia. I design APIs, databases and frontends for real B2B products — from a hotel booking platform used by 1,000+ travel agencies to a multi-tenant POS that keeps selling without internet and AI agents that automate business processes. I work directly with the operations teams and clients who use what I build.`,
+    availability: "Remote · English B2 · Colombia (UTC-5), overlaps US hours · Full-time or contract",
     viewProjects: "View projects →",
     highlights: {
-      years: "Years of experience",
-      agencies: "Agencies on Booking Connect",
-      rpa: "Operational time saved with RPA",
-      hotels: "Hotels on the petty cash system",
+      lucia: "Bookings handled by Lucía, an AI agent I built",
+      agencies: "Agencies on the platform I scaled",
+      providers: "Providers integrated (booking, flights, payments)",
+      rpa: "Accounting team's operational time (RPA)",
     },
     featured: "// featured projects",
     viewAll: "view all →",
   },
   terminal: {
-    status: (years: number) => `${years}+ years of experience · Cartagena, Colombia (remote)`,
+    status: "Cartagena, Colombia · remote · English B2 · open to work",
   },
   projects: {
     metaTitle: "Projects",
     metaDescription:
-      "Technical case studies by Carlos Ceballos: Booking Connect, Pargo, CATOCA, CATOCA's sales system, petty cash management and Caminante.",
+      "Case studies by Carlos Ceballos: Lucía (AI booking agent), Booking Connect, petty cash for 13 hotels, Pargo, CATOCA, CATOCA's sales system and Caminante.",
     title: "Projects",
     intro:
-      "Professional work in private employer repos (documented in depth, without exposing proprietary code), two projects for a real client (one already in production) and my own projects, including a SaaS POS in development. Each file carries the extension of the stack I built it with.",
+      "Each case is written as a deployment: who the client was, what their operation needed, what I built, how it reached production and what happened next. Employer work lives in private repos (documented without exposing proprietary code); there are also two projects for a real client and my own products. Each file carries the extension of the stack I built it with.",
     back: "← projects/",
     employer: "company:",
     period: "period:",
     link: "link:",
-    problem: "// problem",
-    role: "// my role",
+    problem: "// client context",
+    role: "// what I built",
     architecture: "// architecture",
     decisions: "// technical decisions",
     impact: "// impact",
+    outcome: "// what happened next",
     demo: "// demo",
     screenshots: "// screenshots",
     screenshotsSoon: "screenshots on the way — added once the site is deployed",
@@ -80,12 +82,12 @@ const en = {
   },
   skills: {
     metaTitle: "Skills",
-    metaDescription: "Technical stack of Carlos Ceballos: frontend, backend, mobile, data, AI and tooling.",
+    metaDescription: "Capabilities of Carlos Ceballos: AI agents, integrations, backend, frontend and mobile, testing.",
     title: "Skills",
-    intro: "The stack I build with in production, grouped as if it were a dependency manifest.",
+    intro: "Grouped by what I can do for a team, not by technology — written as if it were a dependency manifest.",
     education: "// education",
     educationItems: [
-      "Systems Engineering (in progress) — Universidad de Cartagena",
+      "Systems Engineering — Universidad de Cartagena (7 semesters completed)",
       "Business Strategy Management in the Digital Era — Universidad Tecnológica de Bolívar, 2021",
       "Full Stack Development — edX, 2023",
       "Introduction to Machine Learning — Udemy, 2024",
@@ -95,7 +97,8 @@ const en = {
     metaTitle: "Contact",
     metaDescription: "Contact Carlos Ceballos by email, WhatsApp, GitHub or LinkedIn.",
     title: "Let's talk",
-    intro: (location: string) => `Available for full stack, backend or mobile roles. ${location} — remote work.`,
+    intro: (location: string) =>
+      `Open to Applied AI, AI integrations and full stack roles with B2B product teams. ${location} — remote, English B2, overlapping US hours. Full-time or contract.`,
     downloadCv: "↓ Download CV (PDF)",
   },
 };
@@ -105,8 +108,8 @@ export type Dictionary = typeof en;
 const es: Dictionary = {
   meta: {
     description:
-      "Portafolio de Carlos Ceballos, desarrollador web full stack. Booking Connect, Pargo, CATOCA y más proyectos reales.",
-    roleLong: "Desarrollador Web Full Stack — Frontend · Backend · Mobile",
+      "Carlos Ceballos, Full Stack Engineer · agentes de IA e integraciones para plataformas B2B. Lucía (agente de reservas OpenAI + MCP), Booking Connect, caja menor para 13 hoteles y más trabajo en producción.",
+    roleLong: "Full Stack Engineer · agentes de IA e integraciones para plataformas B2B",
   },
   nav: {
     home: { fileName: "home.tsx", label: "Inicio" },
@@ -136,39 +139,41 @@ const es: Dictionary = {
     downloadCv: "Descargar CV (PDF)",
   },
   home: {
-    headline: "Construyo software que escala,",
-    headlineAccent: "de la base de datos a la interfaz.",
+    headline: "Construyo plataformas B2B, integraciones y agentes de IA",
+    headlineAccent: "que mueven operaciones reales.",
     intro: (name: string) =>
-      `Soy ${name}, desarrollador full stack en Cartagena, Colombia. Diseño APIs, bases de datos y frontends para productos B2B reales — desde una plataforma de reservas hoteleras con más de 1.000 agencias hasta un POS multi-tenant que sigue vendiendo sin internet y agentes de IA que automatizan procesos de negocio.`,
+      `Soy ${name}, ingeniero full stack en Cartagena, Colombia. Diseño APIs, bases de datos y frontends para productos B2B reales — desde una plataforma de reservas hoteleras con más de 1.000 agencias hasta un POS multi-tenant que sigue vendiendo sin internet y agentes de IA que automatizan procesos de negocio. Trabajo directamente con los equipos de operaciones y los clientes que usan lo que construyo.`,
+    availability: "Remoto · inglés B2 · Colombia (UTC-5), coincide con horario de EE. UU. · Tiempo completo o contrato",
     viewProjects: "Ver proyectos →",
     highlights: {
-      years: "Años de experiencia",
-      agencies: "Agencias en Booking Connect",
-      rpa: "Tiempo operativo ahorrado con RPA",
-      hotels: "Hoteles con caja menor",
+      lucia: "Reservas gestionadas por Lucía, un agente de IA que construí",
+      agencies: "Agencias en la plataforma que escalé",
+      providers: "Proveedores integrados (reservas, vuelos, pagos)",
+      rpa: "Tiempo operativo del equipo contable (RPA)",
     },
     featured: "// proyectos destacados",
     viewAll: "ver todos →",
   },
   terminal: {
-    status: (years: number) => `${years}+ años de experiencia · Cartagena, Colombia (remoto)`,
+    status: "Cartagena, Colombia · remoto · inglés B2 · disponible",
   },
   projects: {
     metaTitle: "Proyectos",
     metaDescription:
-      "Casos de estudio técnicos de Carlos Ceballos: Booking Connect, Pargo, CATOCA, el sistema de ventas de CATOCA, gestión de caja menor y Caminante.",
+      "Casos de estudio de Carlos Ceballos: Lucía (agente de reservas con IA), Booking Connect, caja menor para 13 hoteles, Pargo, CATOCA, el sistema de ventas de CATOCA y Caminante.",
     title: "Proyectos",
     intro:
-      "Trabajo profesional en repos privados de empleadores (documentado a fondo, sin exponer código propietario), dos proyectos para un cliente real (uno ya en producción) y proyectos propios, entre ellos un SaaS POS en desarrollo. Cada archivo lleva la extensión del stack que usé para construirlo.",
+      "Cada caso está escrito como un despliegue: quién era el cliente, qué necesitaba su operación, qué construí, cómo llegó a producción y qué pasó después. El trabajo para empleadores vive en repos privados (documentado sin exponer código propietario); también hay dos proyectos para un cliente real y productos propios. Cada archivo lleva la extensión del stack que usé para construirlo.",
     back: "← proyectos/",
     employer: "empresa:",
     period: "periodo:",
     link: "enlace:",
-    problem: "// problema",
-    role: "// mi rol",
+    problem: "// contexto del cliente",
+    role: "// qué construí",
     architecture: "// arquitectura",
     decisions: "// decisiones técnicas",
     impact: "// impacto",
+    outcome: "// qué pasó después",
     demo: "// demo",
     screenshots: "// capturas",
     screenshotsSoon: "capturas en camino — se agregan cuando el sitio esté desplegado",
@@ -182,12 +187,12 @@ const es: Dictionary = {
   },
   skills: {
     metaTitle: "Skills",
-    metaDescription: "Stack técnico de Carlos Ceballos: frontend, backend, mobile, datos, IA y herramientas.",
+    metaDescription: "Capacidades de Carlos Ceballos: agentes de IA, integraciones, backend, frontend y mobile, testing.",
     title: "Skills",
-    intro: "El stack con el que construyo en producción, agrupado como si fuera un manifiesto de dependencias.",
+    intro: "Agrupado por lo que puedo hacer por un equipo, no por tecnología — escrito como si fuera un manifiesto de dependencias.",
     education: "// educación",
     educationItems: [
-      "Ingeniería de Sistemas (en curso) — Universidad de Cartagena",
+      "Ingeniería de Sistemas — Universidad de Cartagena (7 semestres cursados)",
       "Gestión de Estrategia de Negocios en la Era Digital — Universidad Tecnológica de Bolívar, 2021",
       "Desarrollo Full Stack — edX, 2023",
       "Introducción al Machine Learning — Udemy, 2024",
@@ -197,7 +202,8 @@ const es: Dictionary = {
     metaTitle: "Contacto",
     metaDescription: "Contacta a Carlos Ceballos por email, WhatsApp, GitHub o LinkedIn.",
     title: "Hablemos",
-    intro: (location: string) => `Disponible para roles full stack, backend o mobile. ${location} — trabajo remoto.`,
+    intro: (location: string) =>
+      `Disponible para roles de Applied AI, integraciones con IA y full stack en equipos de producto B2B. ${location} — remoto, inglés B2, con horario que coincide con EE. UU. Tiempo completo o contrato.`,
     downloadCv: "↓ Descargar CV (PDF)",
   },
 };

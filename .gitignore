@@ -43,3 +43,6 @@ next-env.d.ts
 # agentes / asistentes IA
 AGENTS.md
 CLAUDE.md
+
+# CV build intermediates
+/cv/dist/*.html

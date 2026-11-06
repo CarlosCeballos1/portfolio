@@ -117,6 +117,13 @@ export default async function ProjectPage({ params }: { params: Params }) {
         </div>
       </section>
 
+      {project.outcome && (
+        <section className="mt-10">
+          <SectionLabel>{t.outcome}</SectionLabel>
+          <p className="mt-2 text-[14.5px] leading-relaxed text-ink-secondary">{project.outcome}</p>
+        </section>
+      )}
+
       {project.video && (
         <section className="mt-10">
           <SectionLabel>{t.demo}</SectionLabel>

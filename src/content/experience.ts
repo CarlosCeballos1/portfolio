@@ -4,23 +4,23 @@ import { localize, type Locale, type LocalizedSource } from "@/i18n/config";
 const EXPERIENCE: LocalizedSource<ExperienceEntry>[] = [
   {
     hash: "e4f7a20",
-    company: { en: "Independent — CATOCA and Pargo", es: "Independiente — CATOCA y Pargo" },
-    role: { en: "Full Stack Developer — Freelance and own product", es: "Desarrollador Full Stack — Freelance y producto propio" },
+    company: { en: "Freelance — client work (CATOCA) and own product (Pargo)", es: "Freelance — trabajo con clientes (CATOCA) y producto propio (Pargo)" },
+    role: { en: "Full Stack Developer — Freelance", es: "Desarrollador Full Stack — Freelance" },
     period: { en: "Jul 2026 — present", es: "Jul 2026 — actualidad" },
     branch: "feature/freelance",
     tags: ["NestJS", "React", "PostgreSQL", "Wompi", "Vercel", { en: "AI", es: "IA" }],
     bullets: [
       {
-        en: "Built and maintain CATOCA's online store (catoca.cafe), in production: Wompi checkout signed in Vercel serverless functions, emails through the Gmail API and images optimized from 33.8 MB to 1.4 MB.",
-        es: "Desarrollé y mantengo la tienda en línea de CATOCA (catoca.cafe), en producción: checkout con Wompi firmado en funciones serverless de Vercel, correos con Gmail API e imágenes optimizadas de 33,8 MB a 1,4 MB.",
+        en: "Client work for CATOCA, a coffee exporter: built and maintain their online store (catoca.cafe), in production: Wompi checkout signed in Vercel serverless functions, emails through the Gmail API and images optimized from 33.8 MB to 1.4 MB.",
+        es: "Trabajo con CATOCA, una exportadora de café: desarrollé y mantengo su tienda en línea (catoca.cafe), en producción: checkout con Wompi firmado en funciones serverless de Vercel, correos con Gmail API e imágenes optimizadas de 33,8 MB a 1,4 MB.",
       },
       {
-        en: "Building CATOCA's internal sales system: batch inventory with a FIFO stock ledger, commissions, pre-invoices with DIAN fields and an export for Siigo Nube, with 100% test coverage.",
-        es: "Construyo el sistema interno de ventas de CATOCA: inventario por lotes con kardex FIFO, comisiones, prefacturas con campos DIAN y exporte para Siigo Nube, con 100 % de cobertura de pruebas.",
+        en: "Building, in phases with the client, CATOCA's internal sales system: batch inventory with a FIFO stock ledger, commissions, pre-invoices with DIAN fields and an export for Siigo Nube, with 100% test coverage.",
+        es: "Construyo por fases con el cliente el sistema interno de ventas de CATOCA: inventario por lotes con kardex FIFO, comisiones, prefacturas con campos DIAN y exporte para Siigo Nube, con 100 % de cobertura de pruebas.",
       },
       {
-        en: "Designing and developing Pargo, my personal project built with AI-assisted development, a multi-tenant SaaS POS for restaurants: PostgreSQL with RLS, a POS that sells without internet using signed events, recipe-based inventory, electronic invoicing and multi-provider AI, with 751 automated tests.",
-        es: "Diseño y desarrollo Pargo, mi proyecto personal construido con desarrollo asistido por IA, un SaaS POS multi-tenant para restaurantes: PostgreSQL con RLS, caja que vende sin internet con eventos firmados, inventario por receta, facturación electrónica e IA multiproveedor, con 751 tests automatizados.",
+        en: "Own product, MVP stage: designing and developing Pargo, built with AI-assisted development, a multi-tenant SaaS POS for restaurants: PostgreSQL with RLS, a POS that sells without internet using signed events, recipe-based inventory, electronic invoicing and multi-provider AI, with 751 automated tests.",
+        es: "Producto propio, en etapa de MVP: diseño y desarrollo Pargo, construido con desarrollo asistido por IA, un SaaS POS multi-tenant para restaurantes: PostgreSQL con RLS, caja que vende sin internet con eventos firmados, inventario por receta, facturación electrónica e IA multiproveedor, con 751 tests automatizados.",
       },
     ],
   },
@@ -33,36 +33,36 @@ const EXPERIENCE: LocalizedSource<ExperienceEntry>[] = [
     tags: ["NestJS", "Django REST Framework", "PostgreSQL", "MongoDB", "React", "Flutter", "OpenAI + MCP", "OpenCLAW"],
     bullets: [
       {
-        en: "Booking Connect: scaled and maintained the API of the company's B2B hotel booking platform (NestJS + MongoDB), used by more than 1,000 travel agencies and 1,400 active users, and built its complete flight booking API.",
-        es: "Booking Connect: escalé y mantuve la API de la plataforma B2B de reservas hoteleras de la empresa (NestJS + MongoDB), usada por más de 1.000 agencias de viaje y 1.400 usuarios activos, y construí su API completa de reservas de vuelos.",
+        en: "Built Lucía, an AI booking agent (OpenAI API + MCP) that created, managed and cancelled reservations and analyzed booking data for agencies and internal staff under the platform's permission model; it handled 4,000+ bookings.",
+        es: "Construí a Lucía, un agente de reservas con IA (API de OpenAI + MCP) que creaba, gestionaba y cancelaba reservas y analizaba datos de reservas para las agencias y el equipo interno con el modelo de permisos de la plataforma; gestionó más de 4.000 reservas.",
       },
       {
-        en: "Booking Connect mobile: rebuilt the entire Booking Connect frontend as a Flutter app (iOS/Android) for booking and managing reservations quickly from the phone, reusing the existing API.",
-        es: "Booking Connect móvil: reconstruí todo el frontend de Booking Connect como una app en Flutter (iOS/Android) para reservar y gestionar reservas de forma ágil desde el teléfono, reutilizando la API existente.",
+        en: "Designed, scaled and maintained the NestJS + MongoDB API of Booking Connect, a B2B booking platform used by 1,000+ travel agencies and 1,400+ active users.",
+        es: "Diseñé, escalé y mantuve la API NestJS + MongoDB de Booking Connect, una plataforma B2B de reservas usada por más de 1.000 agencias de viaje y 1.400 usuarios activos.",
       },
       {
-        en: "Petty cash: built the API (Django REST Framework + PostgreSQL) and frontend that centralized petty cash across the chain's 13 hotels, with tighter control, faster cash closings, automated reports and statistics, and a full history of cash flow and cash purchases per hotel.",
-        es: "Caja menor: construí la API (Django REST Framework + PostgreSQL) y el frontend que centralizaron la caja menor de los 13 hoteles de la cadena, con más control, cierres de caja más ágiles, reportes y estadísticas automáticos y un histórico completo del flujo de caja y de las compras en efectivo de cada hotel.",
+        en: "Integrated 5 providers (Autocore, My Tool, Amadeus, MaarLab, Cobre), including a dual-provider fallback so agencies never saw an outage of the main inventory provider.",
+        es: "Integré 5 proveedores (Autocore, My Tool, Amadeus, MaarLab, Cobre), incluido un fallback de doble proveedor para que las agencias nunca vieran una caída del proveedor principal de inventario.",
       },
       {
-        en: "Lucía, Booking Connect's AI agent (OpenAI API + MCP): created, managed and cancelled bookings and analyzed booking data in real time for agencies and internal staff, handling more than 4,000 reservations under a strict permission model that kept sensitive data from unauthorized users.",
-        es: "Lucía, el agente de IA de Booking Connect (API de OpenAI + MCP): creaba, gestionaba y cancelaba reservas y analizaba en tiempo real los datos de reservas para las agencias y para uso interno; gestionó más de 4.000 reservas con un modelo de permisos estricto que impedía que usuarios no autorizados vieran información sensible.",
+        en: "Built the complete flight booking module and rebuilt the frontend as a Flutter mobile app (iOS/Android) on top of the existing API.",
+        es: "Construí el módulo completo de reservas de vuelos y reconstruí el frontend como una app móvil en Flutter (iOS/Android) sobre la API existente.",
       },
       {
-        en: "Federico, accounting and petty cash assistant (OpenCLAW): analyzed purchase patterns across all purchase orders and generated accounting reports and summaries for the chain's accounting department.",
-        es: "Federico, asistente contable y de caja menor (OpenCLAW): analizaba patrones de compra sobre todas las órdenes de compra y generaba reportes y resúmenes contables para el departamento contable de la cadena.",
+        en: "Built the petty cash and purchase-request system for the accounting team of 13 hotels (Django REST Framework + PostgreSQL) and an invoicing RPA bot (email → Bitrix24 CRM → supporting documents) that cut the team's operational time by 40%.",
+        es: "Construí el sistema de caja menor y requisiciones para el equipo contable de 13 hoteles (Django REST Framework + PostgreSQL) y un bot RPA de facturación (correo → CRM Bitrix24 → soportes) que redujo en un 40 % el tiempo operativo del equipo.",
       },
       {
-        en: "Orchestrator agent (OpenCLAW), restricted to the CEO and me: assigned tasks to the other agents, collected their results and verified the quality of their work.",
-        es: "Agente orquestador (OpenCLAW), al que solo teníamos acceso el CEO y yo: asignaba tareas a los otros agentes, recogía sus resultados y verificaba la calidad de su trabajo.",
+        en: "Built Federico, an accounting assistant (OpenCLAW) that analyzed purchase patterns and generated accounting reports, and an orchestrator agent, restricted to the CEO and me, that assigned tasks to the other agents and checked their work.",
+        es: "Construí a Federico, un asistente contable (OpenCLAW) que analizaba patrones de compra y generaba reportes contables, y un agente orquestador, al que solo teníamos acceso el CEO y yo, que asignaba tareas a los otros agentes y verificaba su trabajo.",
       },
       {
-        en: "Hotel IPTV app: replaced a different traditional TV provider at each hotel with a single IPTV solution, building a Flutter Android TV app on the provider's API with live channels, hotel information, room service, the restaurant menu and the chain's other hotels, plus a virtual intercom: guests scanned a QR code with their phone to call reception through a web tool.",
-        es: "App de IPTV para los hoteles: reemplacé el proveedor de TV tradicional distinto de cada hotel por una sola solución IPTV, con una app en Flutter para Android TV sobre la API del proveedor: canales en vivo, información del hotel, room service, menú del restaurante y los demás hoteles de la cadena, además de una citofonía virtual: el huésped escaneaba un código QR con su teléfono y llamaba a recepción mediante una herramienta web.",
+        en: "Replaced a different TV provider at each hotel with a single IPTV solution: a Flutter Android TV app on the provider's API with live channels, room service, the restaurant menu and a QR virtual intercom to call reception.",
+        es: "Reemplacé el proveedor de TV distinto de cada hotel por una sola solución IPTV: una app Flutter para Android TV sobre la API del proveedor con canales en vivo, room service, menú del restaurante y una citofonía virtual por QR para llamar a recepción.",
       },
       {
-        en: "Automation: built an invoicing RPA bot (email extraction, Bitrix24 CRM registration, document upload) that cut operational time by 40%, and daily Python + PostgreSQL ETL processes for hotel occupancy reporting.",
-        es: "Automatización: construí un bot RPA de facturación (extracción desde el correo, registro en el CRM Bitrix24 y carga de soportes) que redujo los tiempos operativos en un 40 %, y procesos ETL diarios en Python + PostgreSQL para los reportes de ocupación hotelera.",
+        en: "Built daily Python + PostgreSQL ETL processes for hotel occupancy reporting.",
+        es: "Construí procesos ETL diarios en Python + PostgreSQL para los reportes de ocupación hotelera.",
       },
     ],
   },
