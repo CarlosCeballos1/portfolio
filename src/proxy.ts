@@ -7,6 +7,10 @@ export function proxy(request: NextRequest) {
 
   if (pathname === "/es" || pathname.startsWith("/es/")) return NextResponse.next();
 
+  // Next links the English preview image as /en/opengraph-image; serve it as is, because
+  // link-preview crawlers (LinkedIn, WhatsApp) do not always follow redirects.
+  if (pathname === "/en/opengraph-image") return NextResponse.next();
+
   if (pathname === "/en" || pathname.startsWith("/en/")) {
     const url = request.nextUrl.clone();
     url.pathname = pathname.slice(3) || "/";

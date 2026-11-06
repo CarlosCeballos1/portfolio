@@ -35,14 +35,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: `${SITE.name} — ${SITE.role}`,
     description: t.meta.description,
-    metadataBase: new URL("https://carlosceballos.dev"),
+    metadataBase: new URL(SITE.url),
     alternates: {
       canonical: localizedHref(lang, "/"),
       languages: { en: localizedHref("en", "/"), es: localizedHref("es", "/") },
     },
     openGraph: {
       title: `${SITE.name} — ${SITE.role}`,
-      description: t.meta.roleLong,
+      description: t.meta.description,
       type: "website",
       locale: lang === "en" ? "en_US" : "es_CO",
     },

@@ -3,7 +3,7 @@ import type { Locale } from "./config";
 const en = {
   meta: {
     description:
-      "Carlos Ceballos, Full Stack Engineer · AI agents & integrations for B2B platforms. Lucía (OpenAI + MCP booking agent), Booking Connect, petty cash for 13 hotels and more production work.",
+      "Full Stack Engineer in Cartagena, Colombia building AI agents and integrations for B2B platforms. An AI booking agent with 4,000+ bookings and a platform for 1,000+ agencies.",
     roleLong: "Full Stack Engineer · AI agents & integrations for B2B platforms",
   },
   nav: {
@@ -108,7 +108,7 @@ export type Dictionary = typeof en;
 const es: Dictionary = {
   meta: {
     description:
-      "Carlos Ceballos, Full Stack Engineer · agentes de IA e integraciones para plataformas B2B. Lucía (agente de reservas OpenAI + MCP), Booking Connect, caja menor para 13 hoteles y más trabajo en producción.",
+      "Full Stack Engineer en Cartagena, Colombia: agentes de IA e integraciones para plataformas B2B. Un agente de reservas con IA con +4.000 reservas y una plataforma para +1.000 agencias.",
     roleLong: "Full Stack Engineer · agentes de IA e integraciones para plataformas B2B",
   },
   nav: {
