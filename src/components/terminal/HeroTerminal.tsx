@@ -11,7 +11,7 @@ export function HeroTerminal() {
   const lines = [
     { cmd: "whoami", output: SITE.fullName },
     { cmd: "cat role.txt", output: t.meta.roleLong },
-    { cmd: "cat status.txt", output: t.terminal.status(SITE.yearsExperience) },
+    { cmd: "cat status.txt", output: t.terminal.status },
   ];
   const [revealed, setRevealed] = useState(0);
   const [outputShown, setOutputShown] = useState(false);

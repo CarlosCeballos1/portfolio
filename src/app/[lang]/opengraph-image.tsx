@@ -14,19 +14,19 @@ const COLORS = {
 
 const COPY = {
   en: {
-    role: "Full Stack Developer · AI Agents",
+    role: "Full Stack Engineer · AI Agents & Integrations",
     stats: [
-      { value: "1,000+", label: "travel agencies" },
       { value: "4,000+", label: "AI agent bookings" },
-      { value: "3+", label: "years shipping" },
+      { value: "1,000+", label: "travel agencies" },
+      { value: "5", label: "provider APIs" },
     ],
   },
   es: {
-    role: "Desarrollador Full Stack · Agentes de IA",
+    role: "Full Stack Engineer · IA e integraciones",
     stats: [
-      { value: "+1.000", label: "agencias de viaje" },
       { value: "+4.000", label: "reservas con IA" },
-      { value: "+3", label: "años creando" },
+      { value: "+1.000", label: "agencias de viaje" },
+      { value: "5", label: "integraciones" },
     ],
   },
 };

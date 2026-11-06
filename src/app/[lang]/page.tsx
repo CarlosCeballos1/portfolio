@@ -12,10 +12,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const featured = getProjects(locale).filter((p) => p.featured);
 
   const highlights = [
-    { label: t.home.highlights.years, value: `${SITE.yearsExperience}+` },
+    { label: t.home.highlights.lucia, value: locale === "en" ? "4,000+" : "+4.000" },
     { label: t.home.highlights.agencies, value: locale === "en" ? "1,000+" : "+1.000" },
+    { label: t.home.highlights.providers, value: "5" },
     { label: t.home.highlights.rpa, value: "-40%" },
-    { label: t.home.highlights.hotels, value: "13" },
   ];
 
   return (
@@ -28,6 +28,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </h1>
           <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-ink-secondary">
             {t.home.intro(SITE.fullName.split(" ")[0])}
+          </p>
+          <p className="mt-4 flex items-center gap-2 font-mono text-[12.5px] text-ink-muted">
+            <span className="pulse-dot h-1.5 w-1.5 shrink-0 rounded-full bg-status-good" />
+            {t.home.availability}
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link

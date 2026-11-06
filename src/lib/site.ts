@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Carlos Ceballos",
   fullName: "Carlos Daniel Ceballos Amor",
-  role: "Full Stack Developer",
+  role: "Full Stack Engineer · AI agents & integrations for B2B platforms",
   location: "Cartagena, Colombia",
   url: "https://carlosceballos.dev",
   domain: "carlosceballos.dev",
@@ -11,7 +11,6 @@ export const SITE = {
   github: "https://github.com/CarlosCeballos1",
   linkedin: "https://www.linkedin.com/in/carlosceballosamor",
   cvHref: { en: "/cv/CV_Carlos_Ceballos_Amor_EN.pdf", es: "/cv/CV_Carlos_Ceballos_Amor.pdf" },
-  yearsExperience: 3,
 } as const;
 
 export type NavKey = "home" | "projects" | "experience" | "skills" | "contact";
